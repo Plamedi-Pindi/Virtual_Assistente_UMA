@@ -17,7 +17,7 @@ Informações Acadêmicas
 
 Suporte ao Estudante
 
-* Acesso e navegação no portal Mutue
+* Acesso e navegação no portal 
 * Recuperação de senha e suporte técnico
 * Solicitação de documentos acadêmicos
 
