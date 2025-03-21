@@ -1,0 +1,18 @@
+version: "3.1"
+
+rules:
+
+- rule: agradecimento
+  steps:
+  - intent: agradecimento
+  - action: utter_agradecimento
+
+- rule: identidade do Assistente Virtual
+  steps:
+  - intent: quem_es_tu
+  - action: utter_quem_es_tu
+
+- rule: Finalizar conversa
+  steps:
+  - intent: finalizacao
+  - action: utter_finalizacao

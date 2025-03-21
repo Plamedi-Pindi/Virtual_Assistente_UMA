@@ -1,0 +1,162 @@
+version: "3.1"
+
+intents:
+  - saudacao
+  - consultar_cursos_disponiveis
+  - cursos_licenciatura
+  - cursos_mestrado
+  - cursos_doutoramento
+  - finalizacao
+  - agradecimento
+  - quem_es_tu
+  - processo_inscricao
+
+responses:
+  utter_saudacao:
+  - text: "Olá! Eu sou o Assistente Virtual da Universidade Metodista de Angola. Em que posso ajudar hoje?"
+
+  # INFORMAÇÕES ACACEDÊMICAS START ======================================================
+  
+  # Solicitaçõe dos Cursos disponíveis 
+  utter_cursos_disponiveis:
+  - text: "A UMA oferece diversos cursos de licenciatura, mestrado e doutoramento. Poderia especificar qual curso ou área de interesse?"
+
+  utter_cursos_licenciatura:
+  - text: |
+      👨‍🎓 **Cursos de Licenciatura na Universidade Metodista de Angola**  
+        
+        🔹 **Faculdade de Engenharia e Arquitetura**  
+        - Engenharia Informática  
+        - Engenharia Civil  
+        - Engenharia do Ambiente
+        - Engenharia do Mecatrónica
+        - Engenharia Industrial e Sistemas Elécticos
+        - Engenharia Engenharia agropecuária
+        - Arquitetura e Urbanismo
+        
+        🔹 **Faculdade de Ciências da Saúde**  
+        - Enfermagem  
+        - Fisioterapia  
+        - Cardiopneumologia  
+        - Análises Clínicas e Saúde Pública  
+        - Ciências do Desporto e Educação Física 
+        - Psicologia 
+        - Biologia 
+        
+        🔹 **Faculdade de Ciências Jurídicas e Sociais**  
+        - Direito  
+        - Gestão e Administração de Empresas  
+        - Língua Portuguesa e Comunicação
+        - Economia
+        - Turismo e Gestão Hoteleira
+        - Ambiente e Gestão do Território
+        
+        🔹 **Faculdade de Teologia**  
+        - Teologia
+        - Filosofia
+
+      🔎 **Precisa de mais detalhes sobre um curso específico?**  
+          
+
+  utter_cursos_mestrado:
+  - text: |
+      🎓 **Cursos de Mestrado na Universidade Metodista de Angola**  
+        
+        🔹 **Ciências Exatas e Tecnológicas**  
+        - Mestrado em Engenharia Informática  
+        - Mestrado em Engenharia Civil  
+        
+        🔹 **Ciências da Saúde**  
+        - Mestrado em Saúde Pública  
+        
+        🔹 **Ciências Sociais e Humanas**  
+        - Mestrado em Direito  
+        - Mestrado em Psicologia Organizacional  
+        
+        🔹 **Ciências Económicas**  
+        - Mestrado em Gestão e Administração  
+        - Mestrado em Economia e Desenvolvimento    
+
+      🔎 **Gostaria de mais detalhes sobre um curso específico?**  
+
+
+  utter_cursos_doutoramento:
+  - text: |
+      🎓 **Programas de Doutoramento na Universidade Metodista de Angola**  
+        
+        🔹 **Ciências Exatas e Tecnológicas**  
+        - Doutoramento em Engenharia Informática  
+        
+        🔹 **Ciências Sociais e Humanas**  
+        - Doutoramento em Direito  
+        
+        🔹 **Ciências Económicas**  
+        - Doutoramento em Gestão e Administração  
+
+      🔎 **Precisa de mais informações sobre um doutoramento específico?** 
+
+  utter_processo_inscricao:
+  - text: |
+      Para se inscrever na Universidade Metodista de Angola, siga estes passos:
+        
+        1️⃣ **Documentos Necessários** 📄:
+        - Cópia do Bilhete de Identidade (BI);
+        - Cópia do Certificado de Habilitações Literárias;
+        - Pagamento de 12.000 Kz para os emolumentos de inscrição.
+        
+        2️⃣ **Como se inscrever?** ✍️:
+        - Acesse o portal online: [https://portal.mutue.net/register](https://portal.mutue.net/register)
+        - Preencha o formulário e anexe os documentos solicitados.
+        
+        4️⃣ **Atendimento Presencial** 🏢:
+        - Pode dirigir-se à universidade de segunda a sexta, das 8h às 15h30.
+        
+      Para mais informações, visite o site oficial: [https://www.uma.co.ao](https://www.uma.co.ao)
+      Posso ajudar em mais alguma coisa?
+
+  - text: |
+      ✅ **Informações sobre a inscrição na Universidade Metodista de Angola:**
+        
+        📜 **Documentação exigida**:
+        - Cópia do BI (Bilhete de Identidade);
+        - Cópia do Certificado de Habilitações Literárias;
+        - Pagamento de **12.000 Kz** para os emolumentos de inscrição.
+        
+        💻 **Processo de Inscrição Online**:
+        - Acesse o site: [https://portal.mutue.net/register](https://portal.mutue.net/register)
+        - Complete o formulário e anexe os documentos.
+        
+        🏛 **Atendimento presencial**:
+        - Caso prefira, pode comparecer pessoalmente de segunda a sexta-feira.
+        
+      ℹ️ **Mais detalhes no site oficial**: [https://www.uma.co.ao](https://www.uma.co.ao)
+      Posso ajudar em mais alguma coisa?
+
+
+  # INFORMAÇÕES ACACEDÊMICAS END ======================================================
+   
+  # SUPORTE AO ESTUDANTE START ========================================================
+  # SUPORTE AO ESTUDANTE END ==========================================================
+   
+  # ATENDIMENTO ADMINISTRATIVO START ==================================================
+  # ATENDIMENTO ADMINISTRATIVO END ====================================================
+
+  utter_quem_es_tu:
+  - text: |
+      👋 Olá! Eu sou o Assistente Virtual da Universidade Metodista de Angola.  
+        Estou aqui para te ajudar com informações sobre cursos, matrículas, horários e muito mais.  
+        Pergunta-me o que quiser! 😊
+
+  utter_finalizacao:
+    - text: "Até breve! Se precisar de mais informações, estarei por aqui. 😊"
+    - text: "Tchau! Volte sempre que precisar. 👋"
+    - text: "Foi um prazer ajudar! Até a próxima. 🚀"
+
+  utter_agradecimento:
+    - text: "De nada! Se precisar de mais alguma coisa, estou por aqui. 😊"
+    - text: "Fico feliz em ajudar! Qualquer coisa, só chamar."
+    - text: "Você é sempre bem-vindo! Precisando, estou à disposição. 👋"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

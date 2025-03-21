@@ -1,0 +1,39 @@
+# Dependências do Python
+venv/
+.env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Arquivos do Rasa gerados automaticamente
+models/
+cache/
+data/test_results/
+data/core/
+data/nlu/
+*.db
+*.json
+
+# Arquivos de log
+*.log
+logs/
+
+# Configurações locais e credenciais
+config/
+credentials.yml
+secrets.yml
+
+# Diretórios de build
+build/
+dist/
+
+# Arquivos do VSCode e PyCharm
+.vscode/
+.idea/
+*.iml
+
+# Arquivos de pacotes
+*.egg-info/
+pip-log.txt
+pip-delete-this-directory.txt

@@ -1,0 +1,118 @@
+version: "3.1"
+
+nlu:
+- intent: saudacao
+  examples: |
+    - oi
+    - oie
+    - olá
+    - boa tarde 
+    - bom dia 
+    - boa noite
+    - oi, tudo bem
+    - opa, tudo bem
+    - olá, como vai?
+    - Bom dia!
+    - Boa tarde!
+    - Boa noite!
+
+- intent: consultar_cursos_disponiveis
+  examples: |
+    - Quais são os cursos disponíveis?
+    - Quais cursos estão disponíveis na Universidade Metodista de Angola?
+    - Quais são os cursos oferecidos pela Universidade Metodista?
+    - Gostaria de saber mais sobre os cursos.
+    - Posso saber os cursos que a universidade metodista disponibiliza?
+    - Quais são os vossos cursos?
+    - Que cursos têm
+    - Que cursos tem
+    - quais são os cursos que eu posso encontrar?
+    - Cursos disponíveis
+    - Fale mais sobre os cursos.
+    - Quero informações sobre os cursos. 
+    - quais são os cursos administrados na uma
+
+- intent: cursos_licenciatura
+  examples: |
+    - Cursos de licenciatura
+    - licenciatura
+    - Lista de cursos para licenciatura
+    - quais são os cursos de licenciatura
+    - Gostaria de saber os cursos para licenciatura
+    - Quais são os cursos disponíveis para a licenciatura
+    - Quero saber os cursos de licenciatura
+    - Que cursos de graduação a UMA oferece?
+
+- intent: cursos_mestrado
+  examples: |
+    - Cursos de mestrado
+    - mestrado
+    - Lista de cursos para mestrado
+    - quais são os cursos de mestrado
+    - Gostaria de saber os cursos para mestrado
+    - Quais são os cursos disponíveis para o mestrado
+    - Quero saber os cursos de mestrado
+
+- intent: cursos_doutoramento
+  examples: |
+    - Cursos de doutoramento
+    - doutoramento
+    - Lista de cursos para doutoramento
+    - quais são os cursos de doutoramento
+    - Gostaria de saber os cursos para doutoramento
+    - Quais são os cursos disponíveis para o doutoramento
+    - Quero saber os cursos de doutoramento
+
+# PROCESSO DE INSCRIÇÃO E MATRICOLA
+
+- intent: processo_inscricao
+  examples: |
+    - Quero saber sobre as incrições na metodista
+    - Como me inscrevo na Universidade Metodista de Angola?
+    - Quais são os requisitos para entrar na Universidade Metodista de Angola?
+    - Qual é o processo de inscrição na UMA?
+    - Como faço para estudar na Universidade Metodista?
+    - Como me inscrever na universidade metodista de angola?
+    - Quais são os passos para inscrições?
+    - Inscrições na Universidade Metodista de Angola
+    - Processos para inscrições.
+    - Etapas para inscrições.
+    - Passos para inscrições na metodista.
+    - fases para inscrições na metodista.
+
+
+- intent: finalizacao
+  examples: |
+    - não, é só isso
+    - Não
+    - Só isso mesmo
+    - Somente isso
+    - Não, não preciso de mais nada no memento
+    - Não, não há mais nada que eu precise
+    - Não, por enquanto é só isso
+    - Adeus
+    - Até logo
+    - Até mais
+    - Falamos depois
+    - Foi bom falar com você, adeus
+
+- intent: agradecimento
+  examples: |
+    - obrigado
+    - valeu
+    - valeu bot, você demais
+    - agradeço a ajuda
+    - desde já agradeço
+    - muito obrigado pela ajuda
+    - obg
+    - você é top
+    - grato
+
+- intent: quem_es_tu
+  examples: |
+    - Quem és tu?
+    - Quem é você?
+    - O que você faz?
+    - Como você se chama?
+    - Qual é o seu nome?
+    - Pode se apresentar?
