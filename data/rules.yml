@@ -2,17 +2,50 @@ version: "3.1"
 
 rules:
 
+# Agradecimento
 - rule: agradecimento
   steps:
   - intent: agradecimento
   - action: utter_agradecimento
 
+# Saudação
+- rule: saudacao
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+
+# Sobre o Assistente
 - rule: identidade do Assistente Virtual
   steps:
   - intent: quem_es_tu
   - action: utter_quem_es_tu
 
+# Finalização
 - rule: Finalizar conversa
   steps:
   - intent: finalizacao
   - action: utter_finalizacao
+
+# Cursos disponiveis
+- rule: Cursos disponiveis
+  steps:
+  - intent: consultar_cursos_disponiveis
+  - action: utter_cursos_disponiveis
+
+# Cursos de Licenciatura
+- rule: Cursos de Licenciatura
+  steps:
+  - intent: cursos_licenciatura
+  - action: utter_cursos_licenciatura
+
+# Cursos de Mestrado
+- rule: Cursos de Mestrado
+  steps:
+  - intent: cursos_mestrado
+  - action: utter_cursos_mestrado
+
+# Cursos de Doutoramento
+- rule: Cursos de Doutoramento
+  steps:
+  - intent: cursos_doutoramento
+  - action: utter_cursos_doutoramento

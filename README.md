@@ -76,6 +76,17 @@ Contribuições são bem-vindas! Se deseja colaborar, siga estes passos:
 
 5. Abra um **Pull Request**
 
+**Padrão Para Criar Commits Descritivos**
+
+Escreva commits descritivos, seguindo um padrão:
+    
+    feat: adicionar funcionalidade X
+    fix: corrigir bug Y
+    docs: atualizar documentação
+
+
+
+
 📄 Licença
 
 Este projeto está sob a licença MIT. Para mais detalhes, consulte o arquivo LICENSE.

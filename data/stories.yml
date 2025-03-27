@@ -2,19 +2,6 @@ version: "3.1"
 
 stories:
 
-- story: Comversa inicial
-  steps:
-  - intent: saudacao
-  - action: utter_saudacao
-  - intent: consultar_cursos_disponiveis
-  - action: utter_cursos_disponiveis
-  - intent: cursos_licenciatura
-  - action: utter_cursos_licenciatura
-  - intent: cursos_mestrado
-  - action: utter_cursos_mestrado
-  - intent: cursos_doutoramento
-  - action: utter_cursos_doutoramento
-
 - story: Comversa sobre inscricoes
   steps:
   - intent: saudacao

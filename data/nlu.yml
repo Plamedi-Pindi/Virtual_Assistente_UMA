@@ -1,6 +1,7 @@
 version: "3.1"
 
 nlu:
+# Greentgs Intent
 - intent: saudacao
   examples: |
     - oi
@@ -16,6 +17,7 @@ nlu:
     - Boa tarde!
     - Boa noite!
 
+# Cursos Disponíveis Intent
 - intent: consultar_cursos_disponiveis
   examples: |
     - Quais são os cursos disponíveis?
@@ -32,6 +34,7 @@ nlu:
     - Quero informações sobre os cursos. 
     - quais são os cursos administrados na uma
 
+# Cursos de Licenciatura Intent
 - intent: cursos_licenciatura
   examples: |
     - Cursos de licenciatura
@@ -43,6 +46,7 @@ nlu:
     - Quero saber os cursos de licenciatura
     - Que cursos de graduação a UMA oferece?
 
+# Cursos de Mestrado Intent
 - intent: cursos_mestrado
   examples: |
     - Cursos de mestrado
@@ -52,7 +56,9 @@ nlu:
     - Gostaria de saber os cursos para mestrado
     - Quais são os cursos disponíveis para o mestrado
     - Quero saber os cursos de mestrado
+    - sobre cursos de mestrado
 
+# Cursos de Doutoramento Intent
 - intent: cursos_doutoramento
   examples: |
     - Cursos de doutoramento
@@ -64,7 +70,6 @@ nlu:
     - Quero saber os cursos de doutoramento
 
 # PROCESSO DE INSCRIÇÃO E MATRICOLA
-
 - intent: processo_inscricao
   examples: |
     - Quero saber sobre as incrições na metodista
@@ -80,7 +85,7 @@ nlu:
     - Passos para inscrições na metodista.
     - fases para inscrições na metodista.
 
-
+# Finalização Intent
 - intent: finalizacao
   examples: |
     - não, é só isso
@@ -96,6 +101,7 @@ nlu:
     - Falamos depois
     - Foi bom falar com você, adeus
 
+# Thanks Intent
 - intent: agradecimento
   examples: |
     - obrigado
@@ -108,6 +114,7 @@ nlu:
     - você é top
     - grato
 
+# About Bot Intent
 - intent: quem_es_tu
   examples: |
     - Quem és tu?
@@ -116,3 +123,13 @@ nlu:
     - Como você se chama?
     - Qual é o seu nome?
     - Pode se apresentar?
+
+# SUPORT AO ESTUDANTE INTENT
+- intent: acesso_portal_mutue
+  examples: |
+    - como faço para acessar o portal mutue?
+    - como faço para acessar o portal de estudante?
+    - como faço para acessar o portal?
+    - quero acessar o portal Mutue
+    - o que fazer para acessar o portal Mutue?
+    - como fazer o login no portal de estudante?

@@ -1,26 +1,27 @@
-version: "3.1"
+version: '3.1'
 
+# Intents list
 intents:
-  - saudacao
-  - consultar_cursos_disponiveis
-  - cursos_licenciatura
-  - cursos_mestrado
-  - cursos_doutoramento
-  - finalizacao
-  - agradecimento
-  - quem_es_tu
-  - processo_inscricao
+- agradecimento
+- consultar_cursos_disponiveis
+- cursos_doutoramento
+- cursos_licenciatura
+- cursos_mestrado
+- finalizacao
+- processo_inscricao
+- quem_es_tu
+- saudacao
+- acesso_portal_mutue
 
+# Responses
 responses:
+  # Greeting Responses
   utter_saudacao:
-  - text: "Olá! Eu sou o Assistente Virtual da Universidade Metodista de Angola. Em que posso ajudar hoje?"
-
-  # INFORMAÇÕES ACACEDÊMICAS START ======================================================
-  
-  # Solicitaçõe dos Cursos disponíveis 
+  - text: Olá! Eu sou o Assistente Virtual da Universidade Metodista de Angola. Em que posso ajudar hoje?
   utter_cursos_disponiveis:
-  - text: "A UMA oferece diversos cursos de licenciatura, mestrado e doutoramento. Poderia especificar qual curso ou área de interesse?"
+  - text: A UMA oferece diversos cursos de licenciatura, mestrado e doutoramento. Poderia especificar qual curso ou área de interesse?
 
+  # Resposta para a solicitação dos cursos de Licenciatura
   utter_cursos_licenciatura:
   - text: |
       👨‍🎓 **Cursos de Licenciatura na Universidade Metodista de Angola**  
@@ -57,7 +58,7 @@ responses:
 
       🔎 **Precisa de mais detalhes sobre um curso específico?**  
           
-
+  # Resposta para a solicitação dos cursos de Mestrado
   utter_cursos_mestrado:
   - text: |
       🎓 **Cursos de Mestrado na Universidade Metodista de Angola**  
@@ -79,7 +80,7 @@ responses:
 
       🔎 **Gostaria de mais detalhes sobre um curso específico?**  
 
-
+  # Resposta para a solicitação dos cursos de Doutoramento
   utter_cursos_doutoramento:
   - text: |
       🎓 **Programas de Doutoramento na Universidade Metodista de Angola**  
@@ -95,7 +96,9 @@ responses:
 
       🔎 **Precisa de mais informações sobre um doutoramento específico?** 
 
+  # Resposta para o processo de inscrição ou matricola
   utter_processo_inscricao:
+    # First response
   - text: |
       Para se inscrever na Universidade Metodista de Angola, siga estes passos:
         
@@ -113,7 +116,7 @@ responses:
         
       Para mais informações, visite o site oficial: [https://www.uma.co.ao](https://www.uma.co.ao)
       Posso ajudar em mais alguma coisa?
-
+    # Secound response
   - text: |
       ✅ **Informações sobre a inscrição na Universidade Metodista de Angola:**
         
@@ -132,31 +135,31 @@ responses:
       ℹ️ **Mais detalhes no site oficial**: [https://www.uma.co.ao](https://www.uma.co.ao)
       Posso ajudar em mais alguma coisa?
 
-
-  # INFORMAÇÕES ACACEDÊMICAS END ======================================================
-   
-  # SUPORTE AO ESTUDANTE START ========================================================
-  # SUPORTE AO ESTUDANTE END ==========================================================
-   
-  # ATENDIMENTO ADMINISTRATIVO START ==================================================
-  # ATENDIMENTO ADMINISTRATIVO END ====================================================
-
+  # About Bot Response
   utter_quem_es_tu:
   - text: |
       👋 Olá! Eu sou o Assistente Virtual da Universidade Metodista de Angola.  
         Estou aqui para te ajudar com informações sobre cursos, matrículas, horários e muito mais.  
         Pergunta-me o que quiser! 😊
 
+  # Finalization Response
   utter_finalizacao:
-    - text: "Até breve! Se precisar de mais informações, estarei por aqui. 😊"
-    - text: "Tchau! Volte sempre que precisar. 👋"
-    - text: "Foi um prazer ajudar! Até a próxima. 🚀"
+  - text: Até breve! Se precisar de mais informações, estarei por aqui. 😊
+  - text: Tchau! Volte sempre que precisar. 👋
+  - text: Foi um prazer ajudar! Até a próxima. 🚀
 
+  # Thanks Response
   utter_agradecimento:
-    - text: "De nada! Se precisar de mais alguma coisa, estou por aqui. 😊"
-    - text: "Fico feliz em ajudar! Qualquer coisa, só chamar."
-    - text: "Você é sempre bem-vindo! Precisando, estou à disposição. 👋"
+  - text: De nada! Se precisar de mais alguma coisa, estou por aqui. 😊
+  - text: Fico feliz em ajudar! Qualquer coisa, só chamar.
+  - text: Você é sempre bem-vindo! Precisando, estou à disposição. 👋
 
+# Session Configuration
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+actions:
+- utter_saudacao
+- utter_finalizacao
+- utter_cursos_mestrado
+- utter_cursos_disponiveis
