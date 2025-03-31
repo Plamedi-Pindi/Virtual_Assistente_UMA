@@ -74,6 +74,7 @@ nlu:
   examples: |
     - Quero saber sobre as incrições na metodista
     - Como me inscrevo na Universidade Metodista de Angola?
+    - Como me matriculo na Universidade Metodista de Angola?
     - Quais são os requisitos para entrar na Universidade Metodista de Angola?
     - Qual é o processo de inscrição na UMA?
     - Como faço para estudar na Universidade Metodista?
@@ -81,9 +82,10 @@ nlu:
     - Quais são os passos para inscrições?
     - Inscrições na Universidade Metodista de Angola
     - Processos para inscrições.
-    - Etapas para inscrições.
-    - Passos para inscrições na metodista.
+    - como faço para me matricular na UMA.
+    - Passos para matricula na metodista.
     - fases para inscrições na metodista.
+    - quero me matricular na metodista.
 
 # Finalização Intent
 - intent: finalizacao
@@ -129,7 +131,6 @@ nlu:
   examples: |
     - como faço para acessar o portal mutue?
     - como faço para acessar o portal de estudante?
-    - como faço para acessar o portal?
     - quero acessar o portal Mutue
     - o que fazer para acessar o portal Mutue?
     - como fazer o login no portal de estudante?

@@ -49,3 +49,10 @@ rules:
   steps:
   - intent: cursos_doutoramento
   - action: utter_cursos_doutoramento
+
+# Acesso ao Portal Mutue
+- rule: Acesso ao Portal Mutue
+  steps:
+  - intent: acesso_portal_mutue
+  - action: utter_acesso_portal_mutue
+

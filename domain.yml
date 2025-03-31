@@ -24,9 +24,9 @@ responses:
   # Resposta para a solicitação dos cursos de Licenciatura
   utter_cursos_licenciatura:
   - text: |
-      👨‍🎓 **Cursos de Licenciatura na Universidade Metodista de Angola**  
+      👨‍🎓 *Cursos de Licenciatura na Universidade Metodista de Angola*  
         
-        🔹 **Faculdade de Engenharia e Arquitetura**  
+        🔹 *Faculdade de Engenharia e Arquitetura*  
         - Engenharia Informática  
         - Engenharia Civil  
         - Engenharia do Ambiente
@@ -35,7 +35,7 @@ responses:
         - Engenharia Engenharia agropecuária
         - Arquitetura e Urbanismo
         
-        🔹 **Faculdade de Ciências da Saúde**  
+        🔹 *Faculdade de Ciências da Saúde*  
         - Enfermagem  
         - Fisioterapia  
         - Cardiopneumologia  
@@ -44,7 +44,7 @@ responses:
         - Psicologia 
         - Biologia 
         
-        🔹 **Faculdade de Ciências Jurídicas e Sociais**  
+        🔹 *Faculdade de Ciências Jurídicas e Sociais*  
         - Direito  
         - Gestão e Administração de Empresas  
         - Língua Portuguesa e Comunicação
@@ -52,87 +52,87 @@ responses:
         - Turismo e Gestão Hoteleira
         - Ambiente e Gestão do Território
         
-        🔹 **Faculdade de Teologia**  
+        🔹 *Faculdade de Teologia*  
         - Teologia
         - Filosofia
 
-      🔎 **Precisa de mais detalhes sobre um curso específico?**  
+      🔎 *Precisa de mais detalhes sobre um curso específico?*  
           
   # Resposta para a solicitação dos cursos de Mestrado
   utter_cursos_mestrado:
   - text: |
-      🎓 **Cursos de Mestrado na Universidade Metodista de Angola**  
+      🎓 *Cursos de Mestrado na Universidade Metodista de Angola*  
         
-        🔹 **Ciências Exatas e Tecnológicas**  
+        🔹 *Ciências Exatas e Tecnológicas*  
         - Mestrado em Engenharia Informática  
         - Mestrado em Engenharia Civil  
         
-        🔹 **Ciências da Saúde**  
+        🔹 *Ciências da Saúde*  
         - Mestrado em Saúde Pública  
         
-        🔹 **Ciências Sociais e Humanas**  
+        🔹 *Ciências Sociais e Humanas*  
         - Mestrado em Direito  
         - Mestrado em Psicologia Organizacional  
         
-        🔹 **Ciências Económicas**  
+        🔹 *Ciências Económicas*  
         - Mestrado em Gestão e Administração  
         - Mestrado em Economia e Desenvolvimento    
 
-      🔎 **Gostaria de mais detalhes sobre um curso específico?**  
+      🔎 *Gostaria de mais detalhes sobre um curso específico?*  
 
   # Resposta para a solicitação dos cursos de Doutoramento
   utter_cursos_doutoramento:
   - text: |
-      🎓 **Programas de Doutoramento na Universidade Metodista de Angola**  
+      🎓 *Programas de Doutoramento na Universidade Metodista de Angola*  
         
-        🔹 **Ciências Exatas e Tecnológicas**  
+        🔹 *Ciências Exatas e Tecnológicas*  
         - Doutoramento em Engenharia Informática  
         
-        🔹 **Ciências Sociais e Humanas**  
+        🔹 *Ciências Sociais e Humanas*  
         - Doutoramento em Direito  
         
-        🔹 **Ciências Económicas**  
+        🔹 *Ciências Económicas*  
         - Doutoramento em Gestão e Administração  
 
-      🔎 **Precisa de mais informações sobre um doutoramento específico?** 
+      🔎 *Precisa de mais informações sobre um doutoramento específico?* 
 
   # Resposta para o processo de inscrição ou matricola
   utter_processo_inscricao:
     # First response
   - text: |
-      Para se inscrever na Universidade Metodista de Angola, siga estes passos:
+      Para se inscrever ou matriclar na Universidade Metodista de Angola, siga estes passos:
         
-        1️⃣ **Documentos Necessários** 📄:
+        1️⃣ *Documentos Necessários* 📄:
         - Cópia do Bilhete de Identidade (BI);
         - Cópia do Certificado de Habilitações Literárias;
         - Pagamento de 12.000 Kz para os emolumentos de inscrição.
         
-        2️⃣ **Como se inscrever?** ✍️:
+        2️⃣ *Como se inscrever?* ✍️:
         - Acesse o portal online: [https://portal.mutue.net/register](https://portal.mutue.net/register)
         - Preencha o formulário e anexe os documentos solicitados.
         
-        4️⃣ **Atendimento Presencial** 🏢:
+        4️⃣ *Atendimento Presencial* 🏢:
         - Pode dirigir-se à universidade de segunda a sexta, das 8h às 15h30.
         
       Para mais informações, visite o site oficial: [https://www.uma.co.ao](https://www.uma.co.ao)
       Posso ajudar em mais alguma coisa?
     # Secound response
   - text: |
-      ✅ **Informações sobre a inscrição na Universidade Metodista de Angola:**
+      ✅ *Informações sobre a inscrição e matrícula na Universidade Metodista de Angola:*
         
-        📜 **Documentação exigida**:
+        *Documentação exigida*:
         - Cópia do BI (Bilhete de Identidade);
         - Cópia do Certificado de Habilitações Literárias;
         - Pagamento de **12.000 Kz** para os emolumentos de inscrição.
         
-        💻 **Processo de Inscrição Online**:
+        *Processo de Inscrição Online*:
         - Acesse o site: [https://portal.mutue.net/register](https://portal.mutue.net/register)
         - Complete o formulário e anexe os documentos.
         
-        🏛 **Atendimento presencial**:
+        *Atendimento presencial*:
         - Caso prefira, pode comparecer pessoalmente de segunda a sexta-feira.
         
-      ℹ️ **Mais detalhes no site oficial**: [https://www.uma.co.ao](https://www.uma.co.ao)
+      ℹ️ *Mais detalhes no site oficial*: [https://www.uma.co.ao](https://www.uma.co.ao)
       Posso ajudar em mais alguma coisa?
 
   # About Bot Response
@@ -154,7 +154,37 @@ responses:
   - text: Fico feliz em ajudar! Qualquer coisa, só chamar.
   - text: Você é sempre bem-vindo! Precisando, estou à disposição. 👋
 
-# Session Configuration
+  # Respostar sobre Como acessar o Portal Mutue
+  utter_acesso_portal_mutue:
+  - text: |
+      Acessar o **Portal Mutue** (ou portal do estudante) é muito simples, Vou ajudar você passo a passo:
+
+      # Acesso ao Portal:
+
+        Aqui está um passo a passo detalhado para acessar o **Portal Mutue** da Universidade Metodista de Angola:
+
+        *Passo 1: Acesse o site oficial*
+          1.Abra um navegador de internet como Google Chrome, Firefox ou Microsoft Edge.
+          2.Digite o endereço do Portal Mutue na barra de pesquisa: [URL do Portal Mutue] e pressione Enter.
+
+        *Passo 2: Faça login na sua conta*
+
+          1.Na página inicial do portal, localize os campos de *usuário e senha*.
+          2.Digite seu *nome de usuário* (geralmente o número de estudante ou e-mail institucional).
+          3.Digite sua *senha* cadastrada.
+          4.Clique no botão *"Entrar"*.
+
+        *Passo 4: Navegue no portal*
+          1.Após o login, você terá acesso a serviços como consultar *notas*, *horários de aulas*, *pagamento de propinas* e *materiais de apoio*.
+          2.Utilize o menu do portal para encontrar as opções desejadas.
+
+        *Resolva problemas de acesso (se necessário)*
+          *Esqueceu a senha?* Clique em "Esqueci minha senha" e siga as instruções para redefini-la.
+          *Erro ao entrar?* Verifique se digitou corretamente seus dados e tente novamente.
+          *Portal não carrega?* Limpe o cache do navegador ou tente acessar de outro dispositivo.
+
+
+# Session Configuration ===========================================================
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
