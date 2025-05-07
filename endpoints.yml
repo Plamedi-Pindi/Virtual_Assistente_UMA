@@ -28,7 +28,7 @@
 tracker_store:
    type: mongod
    url: mongodb://localhost:27017
-   db: uma_db_example
+   db: uma_virtual_assistent
    username: ""
    password: ""
    auth_source: "admin"  
