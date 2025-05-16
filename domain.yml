@@ -12,9 +12,51 @@ intents:
 - quem_es_tu
 - saudacao
 - acesso_portal_mutue
+- autenticar
+- fornecer_credenciais
+# - consultar_divida
+
+ententies:
+ - codigoEstudante
+ - senha
+
+# Slots
+slots:
+  # user id
+  student_id:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+  # password
+  password:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+  # check if the auth user 
+  is_authenticated:
+    type: bool
+    initial_value: false
+    influence_conversation: true
+    mappings:
+      - type: custom
+
 
 # Responses
 responses:
+
+  utter_ask_student_id:
+    - text: "Por favor, informe o seu código de aluno."
+  utter_ask_password:
+    - text: "Agora, informe sua senha."
+  utter_auth_success:
+    - text: "Autenticação bem-sucedida. Como posso ajudar?"
+  utter_auth_failed:
+    - text: "Código ou senha inválidos. Tente novamente."
+  utter_auth_required:
+    - text: "Para continuar, preciso que você se autentique. Qual o seu código de aluno?"
+
   # Greeting Responses
   utter_saudacao:
   - text: Olá! Eu sou o Assistente Virtual da Universidade Metodista de Angola. Em que posso ajudar hoje?
@@ -193,8 +235,9 @@ responses:
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
 actions:
-- utter_saudacao
-- utter_finalizacao
-- utter_cursos_mestrado
-- utter_cursos_disponiveis
+  - utter_saudacao
+  - action_validar_credenciais
+  # - action_check_debt
+  # - action_consultar_divida

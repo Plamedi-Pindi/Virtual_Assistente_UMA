@@ -56,3 +56,32 @@ rules:
   - intent: acesso_portal_mutue
   - action: utter_acesso_portal_mutue
 
+# Autenticação
+- rule: Autenticação
+  steps: 
+  - intent: autenticar
+  - action: utter_ask_student_id
+
+# Receber credenciais
+- rule: Receber credenciais
+  steps:
+  - intent: fornecer_credenciais
+  - action: action_validar_credenciais
+
+# # Verificar dívida autenticado
+#   - rule: Verificar dívida autenticado
+#     condition:
+#       - slot_was_set:
+#           - is_authenticated: true
+#     steps:
+#       - intent: consultar_divida
+#       - action: action_consultar_divida
+
+# # Verificar dívida sem autenticação
+#   - rule: Verificar dívida sem autenticação
+#     condition:
+#       - slot_was_set:
+#           - is_authenticated: false
+#     steps:
+#       - intent: consultar_divida
+#       - action: utter_auth_required

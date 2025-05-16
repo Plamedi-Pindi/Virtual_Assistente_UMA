@@ -134,3 +134,27 @@ nlu:
     - quero acessar o portal Mutue
     - o que fazer para acessar o portal Mutue?
     - como fazer o login no portal de estudante?
+
+# AUTH INTENT
+- intent: autenticar
+  examples: |
+    - quero acessar minha conta
+    - preciso ver minhas dívidas
+    - quero saber se tenho dívida
+
+# PROVIDE CREDENTIAL INTENT
+- intent: fornecer_credenciais
+  examples: |
+    - meu código é 20231234 e a senha é minhaSenha123
+    - código 203344 senha 1234
+    - 20231234, senha 9876
+
+# 
+- regex: student_id
+  examples: |
+    - \d{8}
+    
+# 
+- regex: password
+  examples: |
+    - .{4,}
