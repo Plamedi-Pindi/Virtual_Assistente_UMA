@@ -10,3 +10,10 @@ stories:
   - action: utter_processo_inscricao
 
 
+- story: Autenticação
+  steps:
+  - intent: autenticar
+  - action: utter_autenticacao
+  - action: credenciais_form
+  - active_loop: credenciais_form
+  - action: utter_auth_success

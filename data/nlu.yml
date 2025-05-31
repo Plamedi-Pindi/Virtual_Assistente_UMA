@@ -1,6 +1,15 @@
 version: "3.1"
 
 nlu:
+
+- regex: numero_estudante
+  examples: |
+    - ^\d{5}$
+
+- regex: senha_estudante
+  examples: |
+    - (?=.*[a-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}
+
 # Greentgs Intent
 - intent: saudacao
   examples: |
@@ -103,6 +112,49 @@ nlu:
     - Falamos depois
     - Foi bom falar com você, adeus
 
+# Fora de Escopo
+- intent: fora_de_contexto
+  examples: |
+    - quantos gols o Messi tem?
+    - pão doce
+    - qual é o melhor time do mundo?
+    - como faço pão?
+    - me fala sobre política
+    - Me dá uma receita de feijão.
+    - Qual é o melhor time de Angola?
+    - Você gosta de futebol?
+    - Onde investir meu dinheiro?
+    - Qual é a cotação do dólar?
+    - Quem é o presidente de Angola?
+    - O que você acha do governo?
+    - Estou apaixonado, o que faço?
+    - Como conquistar uma garota?
+    - Você tem namorado?
+    - Qual é a melhor música do Anselmo Ralph?
+    - Canta uma música para mim.
+    - Me ensina a programar em Python.
+    - Como montar um PC gamer?
+    - O que é ChatGPT?
+
+# Linguans inadequada
+- intent: linguagem_inadequada
+  examples: |
+    - otário
+    - merda
+    - vai à merda
+    - foda-se
+    - és mesmo burro
+    - palhaço
+    - vai te lixar
+    - idiota
+    - filho da puta
+    - caralho
+    - és mesmo idiota
+    - seu feio
+    - Cala a boca
+    - Porra
+
+
 # Thanks Intent
 - intent: agradecimento
   examples: |
@@ -139,22 +191,24 @@ nlu:
 - intent: autenticar
   examples: |
     - quero acessar minha conta
-    - preciso ver minhas dívidas
-    - quero saber se tenho dívida
+    - Quero entrar na minha conta
+    - quero fazer login na minha conta de estudante
+    - preciso acessar o meu portal de estudate
+    - preciso acessar o meu portal
+    - posso acessar a minha conta de estudante
+    - posso acessar o meu porta
+    - Quero fazer login
 
 # PROVIDE CREDENTIAL INTENT
-- intent: fornecer_credenciais
+- intent: fornecer_numero_estudante
   examples: |
-    - meu código é 20231234 e a senha é minhaSenha123
-    - código 203344 senha 1234
-    - 20231234, senha 9876
+    - [40890](numero_estudante)
+    - o meu número de estudante é 50890
+    - o meu número: 50890
 
-# 
-- regex: student_id
+- intent: fornecer_senha_estudante
   examples: |
-    - \d{8}
-    
-# 
-- regex: password
-  examples: |
-    - .{4,}
+    - [minhaconta123](senha_estudante)
+    - a minha senha é: senha@123
+    - Senha: Aluno123
+

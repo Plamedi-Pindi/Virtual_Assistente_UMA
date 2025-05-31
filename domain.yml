@@ -12,28 +12,33 @@ intents:
 - quem_es_tu
 - saudacao
 - acesso_portal_mutue
+- fora_de_contexto
+- linguagem_inadequada
 - autenticar
-- fornecer_credenciais
-# - consultar_divida
+- fornecer_numero_estudante
+- fornecer_senha_estudante
 
-ententies:
- - codigoEstudante
- - senha
+# ENTITIY
+entities:
+- numero_estudante
+- senha_estudante
 
 # Slots
 slots:
-  # user id
-  student_id:
+  numero_estudante_slt:
     type: text
-    influence_conversation: false
+    influence_conversation: true
     mappings:
-      - type: custom
-  # password
-  password:
+    - type: from_entity
+      entity: numero_estudante
+
+  senha_estudante_slt:
     type: text
-    influence_conversation: false
+    influence_conversation: true
     mappings:
-      - type: custom
+    - type: from_entity
+      entity: senha_estudante
+
   # check if the auth user 
   is_authenticated:
     type: bool
@@ -42,20 +47,31 @@ slots:
     mappings:
       - type: custom
 
+forms:
+  credenciais_form: 
+    required_slots:
+      - numero_estudante_slt
+      - senha_estudante_slt
+
 
 # Responses
 responses:
 
-  utter_ask_student_id:
-    - text: "Por favor, informe o seu código de aluno."
-  utter_ask_password:
-    - text: "Agora, informe sua senha."
-  utter_auth_success:
-    - text: "Autenticação bem-sucedida. Como posso ajudar?"
-  utter_auth_failed:
-    - text: "Código ou senha inválidos. Tente novamente."
-  utter_auth_required:
-    - text: "Para continuar, preciso que você se autentique. Qual o seu código de aluno?"
+  utter_reformular:
+  - text: Me desculpe, não entendi o que você disse. Você poderia reformular a sua frase? 
+
+  utter_default:
+  - text: Desculpa eu não entendi. Você pode reformular?
+
+  # Fora de Escopo
+  utter_fora_de_contexto:
+  - text: Desculpe, não fui treinado para esse assunto. Posso ajudar apenas com informações relacionadas à Universidade Metodista de Angola
+
+  # Linguagem Inadequada
+  utter_linguagem_inadequada:
+  - text: "Por favor, mantenha o respeito. Estou aqui para ajudar com informações da Universidade Metodista de Angola."
+  - text: "Uso de linguagem ofensiva não é tolerado. Posso te ajudar com algo relacionado à universidade?"
+  - text: "Vamos manter uma conversa respeitosa. Se precisar de ajuda acadêmica, estou à disposição."
 
   # Greeting Responses
   utter_saudacao:
@@ -143,7 +159,6 @@ responses:
 
   # Resposta para o processo de inscrição ou matricola
   utter_processo_inscricao:
-    # First response
   - custom:
       message: |
         # Para se inscrever ou matriclar na Universidade Metodista de Angola, siga estes passos:
@@ -209,35 +224,43 @@ responses:
 
         # Acesso ao Portal:
 
-          *Aqui está um passo a passo detalhado para acessar o **Portal Mutue** da Universidade Metodista de Angola:*
+        *Aqui está um passo a passo detalhado para acessar o **Portal Mutue** da Universidade Metodista de Angola:*
 
-          ## *Passo 1: Acesse o site oficial*
-            1. Abra um navegador de internet como Google Chrome, Firefox ou Microsoft Edge.
-            2. Digite o endereço do Portal Mutue na barra de pesquisa: [URL do Portal Mutue] e pressione Enter.
+        ## Passo 1: Acesse o site oficial
+        1. Abra um navegador de internet como Google Chrome, Firefox ou Microsoft Edge.
+        2. Digite o endereço do Portal Mutue na barra de endereços: [URL do Portal Mutue] e pressione Enter.
 
-          ## *Passo 2: Faça login na sua conta*
-            1. Na página inicial do portal, localize os campos de *usuário e senha*.
-            2. Digite seu *nome de usuário* (geralmente o número de estudante ou e-mail institucional).
-            3. Digite sua *senha* cadastrada.
-            4. Clique no botão *"Entrar"*.
+        ## Passo 2: Faça login na sua conta
+        1. Na página inicial do portal, localize os campos de *usuário* e *senha*.
+        2. Digite seu *nome de usuário* (geralmente o número de estudante ou e-mail institucional).
+        3. Digite sua *senha* cadastrada.
+        4. Clique no botão *"Entrar"*.
 
-          ## *Passo 4: Navegue no portal*
-            1. Após o login, você terá acesso a serviços como consultar *notas*, *horários de aulas*, *pagamento de propinas* e *materiais de apoio*.
-            2. Utilize o menu do portal para encontrar as opções desejadas.
+        ## Passo 3: Navegue no portal
+        1. Após o login, você terá acesso a serviços como consultar *notas*, *horários de aulas*, *pagamento de propinas* e *materiais de apoio*.
+        2. Utilize o menu do portal para encontrar as opções desejadas.
 
-          ## *Resolva problemas de acesso (se necessário)*
-            *Esqueceu a senha?* Clique em "Esqueci minha senha" e siga as instruções para redefini-la.
-            *Erro ao entrar?* Verifique se digitou corretamente seus dados e tente novamente.
-            *Portal não carrega?* Limpe o cache do navegador ou tente acessar de outro dispositivo.
+        ## Passo 4: Resolva problemas de acesso (se necessário)
+        - **Esqueceu a senha?** Clique em *"Esqueci minha senha"* e siga as instruções para redefini-la.
+        - **Erro ao entrar?** Verifique se digitou corretamente seus dados e tente novamente.
+        - **Portal não carrega?** Limpe o cache do navegador ou tente acessar de outro dispositivo.
+
+  # Auth Response
+  utter_autenticacao:
+  - text: Para acessares a sua conta vou precisar que me forneça as suas credenciais de estudante.
+
+  utter_ask_credenciais_form_numero_estudante_slt:
+  - text: Informe o seu **número de estudante**, por favor.
+  
+  utter_ask_credenciais_form_senha_estudante_slt:
+  - text: Agora informe a **senha da sua conta**, por favor.
+
+  utter_auth_success:
+  - text: A autenticação foi um sucesso! 🥳
 
 
+  
 # Session Configuration ===========================================================
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
-actions:
-  - utter_saudacao
-  - action_validar_credenciais
-  # - action_check_debt
-  # - action_consultar_divida
