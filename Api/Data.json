@@ -1,0 +1,45 @@
+[
+    {
+        "id": 1,
+        "tipo": "Licenciatura",
+        "faculdade": "Engenharia e Arquitetura",
+        "nome": "Engenharia Informática ",
+        "cursos": [
+            {
+                "nome": "Engenharia Informática",
+                "descricao": "### 📘 Engenharia Informática\n- **Duração:** 4 anos (8 semestres)\n- **Forma de administração:** Presencial, com aulas teóricas, práticas e laboratoriais.\n- **Divisão Curricular:**\n  - **1º Ano:** Fundamentos de programação, matemática, física e introdução à informática.\n  - **2º Ano:** Estruturas de dados, redes de computadores, sistemas operativos.\n  - **3º Ano:** Banco de dados, engenharia de software, segurança informática.\n  - **4º Ano:** Inteligência artificial, projetos finais, estágio curricular."
+            },
+            {
+                "nome": "Engenharia Civil",
+                "descricao": "### 📘 Engenharia Civil\n- **Duração:** 4 anos (8 semestres)\n- **Forma de administração:** Presencial, com atividades de campo, laboratórios e projetos.\n- **Divisão Curricular:**\n  - **1º Ano:** Desenho técnico, matemática, física, introdução à engenharia civil.\n  - **2º Ano:** Materiais de construção, mecânica dos solos, topografia.\n  - **3º Ano:** Estruturas de concreto, hidráulica, vias de comunicação.\n  - **4º Ano:** Planeamento urbano, gestão de obras, estágio e projeto final."
+            },
+            {
+                "nome": "Engenharia do Ambiente",
+                "descricao": "### 📘 Engenharia do Ambiente\n- **Duração:** 4 anos (8 semestres)\n- **Forma de administração:** Presencial, com práticas laboratoriais e visitas técnicas.\n- **Divisão Curricular:**\n  - **1º Ano:** Ecologia, química geral, matemática.\n  - **2º Ano:** Gestão de resíduos, recursos hídricos, microbiologia ambiental.\n  - **3º Ano:** Tratamento de águas, impacto ambiental, legislação ambiental.\n  - **4º Ano:** Energias renováveis, auditoria ambiental, estágio e projeto."
+            },
+            {
+                "nome": "Engenharia Mecatrónica",
+                "descricao": "### 📘 Engenharia Mecatrónica\n- **Duração:** 4 anos (8 semestres)\n- **Forma de administração:** Presencial, com ênfase em laboratórios e projetos integrados.\n- **Divisão Curricular:**\n  - **1º Ano:** Matemática, física, desenho técnico, eletricidade.\n  - **2º Ano:** Programação, sistemas digitais, eletrónica.\n  - **3º Ano:** Automação, robótica, controle de sistemas.\n  - **4º Ano:** Inteligência artificial aplicada, projeto final, estágio curricular."
+            },
+            {
+                "nome": "Engenharia Industrial e Sistemas Elécticos",
+                "descricao": "### 📘 Engenharia Industrial e Sistemas Elécticos\n- **Duração:** 4 anos (8 semestres)\n- **Forma de administração:** Presencial, com aulas práticas e de simulação industrial.\n- **Divisão Curricular:**\n  - **1º Ano:** Matemática, física, introdução à engenharia industrial.\n  - **2º Ano:** Máquinas elétricas, sistemas de produção, eletrónica.\n  - **3º Ano:** Eficiência energética, logística, automação industrial.\n  - **4º Ano:** Gestão de sistemas, projeto e manutenção, estágio e TFC."
+            },
+            {
+                "nome": "Engenharia Agropecuária",
+                "descricao": "### 📘 Engenharia Agropecuária\n- **Duração:** 4 anos (8 semestres)\n- **Forma de administração:** Presencial, com práticas de campo e em laboratório.\n- **Divisão Curricular:**\n  - **1º Ano:** Biologia, solo e clima, introdução à agropecuária.\n  - **2º Ano:** Culturas agrícolas, criação de animais, agroecologia.\n  - **3º Ano:** Tecnologia de produção, nutrição animal, mecanização agrícola.\n  - **4º Ano:** Gestão rural, sustentabilidade, estágio e trabalho final."
+            },
+            {
+                "nome": "Arquitetura e Urbanismo",
+                "descricao": "### 📘 Arquitetura e Urbanismo\n- **Duração:** 5 anos (10 semestres)\n- **Forma de administração:** Presencial, com ateliês de projeto e visitas técnicas.\n- **Divisão Curricular:**\n  - **1º Ano:** Desenho arquitetónico, história da arquitetura, geometria.\n  - **2º Ano:** Materiais de construção, conforto ambiental, expressão gráfica.\n  - **3º Ano:** Projeto arquitetónico, urbanismo, informática aplicada.\n  - **4º Ano:** Planeamento urbano, paisagismo, reabilitação urbana.\n  - **5º Ano:** Projeto final, estágio supervisionado, apresentação pública."
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "tipo": "Licenciatura",
+        "faculdade": "Engenharia e Arquitetura",
+        "nome": "Engenharia Informática ",
+        "info": ""
+    }
+]
