@@ -78,6 +78,17 @@ nlu:
     - Quais são os cursos disponíveis para o doutoramento
     - Quero saber os cursos de doutoramento
 
+# Cursos ESPECIFICO
+- intent: cursos_especifico
+  examples: |
+    - Informática
+    - Sim, curso de Engenharia Civil  
+    - Sim, enfermagem
+    - curso de Fisioterapia   
+    - Cardiopneumologia  
+    - quero informações sobre o curso de Economia
+    - quero mais informações sobre o curso de Direito
+
 # PROCESSO DE INSCRIÇÃO E MATRICOLA
 - intent: processo_inscricao
   examples: |
@@ -135,6 +146,8 @@ nlu:
     - Me ensina a programar em Python.
     - Como montar um PC gamer?
     - O que é ChatGPT?
+    - arroz
+    
 
 # Linguans inadequada
 - intent: linguagem_inadequada
@@ -196,7 +209,7 @@ nlu:
     - preciso acessar o meu portal de estudate
     - preciso acessar o meu portal
     - posso acessar a minha conta de estudante
-    - posso acessar o meu porta
+    - posso acessar o meu portal
     - Quero fazer login
 
 # PROVIDE CREDENTIAL INTENT
@@ -212,3 +225,16 @@ nlu:
     - a minha senha é: senha@123
     - Senha: Aluno123
 
+# CALENDARIO
+- intent: perguntar_calendario
+  examples: |
+    - Quando começam as aulas?
+    - Qual é a data de início das aulas?
+    - Quando é o primeiro dia de aula?
+    - Quando termina o semestre?
+    - Qual é a data de fim do semestre?
+    - Quando são as férias?
+    - Qual o período de férias?
+    - Quando começam
+
+  # 

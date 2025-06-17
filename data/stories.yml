@@ -10,10 +10,42 @@ stories:
   - action: utter_processo_inscricao
 
 
-- story: Autenticação
+# - story: Autenticação
+#   steps:
+#   - intent: autenticar
+#   - action: utter_autenticacao
+#   - action: credenciais_form
+#   - active_loop: credenciais_form
+#   - action: action_validar_credenciais
+
+- story: interactive_story_1
   steps:
   - intent: autenticar
   - action: utter_autenticacao
   - action: credenciais_form
   - active_loop: credenciais_form
-  - action: utter_auth_success
+  - slot_was_set:
+    - requested_slot: numero_estudante_slt
+  - intent: fornecer_numero_estudante
+    entities:
+    - numero_estudante: '12345'
+    - numero_estudante: '12345'
+  - slot_was_set:
+    - numero_estudante_slt: '12345'
+  - action: credenciais_form
+  - slot_was_set:
+    - requested_slot: senha_estudante_slt
+  - intent: fornecer_senha_estudante
+    entities:
+    - senha_estudante: Senha@1234
+  - slot_was_set:
+    - senha_estudante_slt: Senha@1234
+  - action: credenciais_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_validar_credenciais
+  - slot_was_set:
+    - is_authenticated: true
+  - slot_was_set:
+    - tentativas_login: 0

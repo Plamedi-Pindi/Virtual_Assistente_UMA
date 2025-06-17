@@ -7,6 +7,7 @@ intents:
 - cursos_doutoramento
 - cursos_licenciatura
 - cursos_mestrado
+- cursos_especifico
 - finalizacao
 - processo_inscricao
 - quem_es_tu
@@ -17,6 +18,7 @@ intents:
 - autenticar
 - fornecer_numero_estudante
 - fornecer_senha_estudante
+- perguntar_calendario
 
 # ENTITIY
 entities:
@@ -44,6 +46,13 @@ slots:
     type: bool
     initial_value: false
     influence_conversation: true
+    mappings:
+      - type: custom
+
+  tentativas_login:
+    type: float
+    initial_value: 0
+    influence_conversation: false
     mappings:
       - type: custom
 
@@ -255,8 +264,14 @@ responses:
   utter_ask_credenciais_form_senha_estudante_slt:
   - text: Agora informe a **senha da sua conta**, por favor.
 
-  utter_auth_success:
-  - text: A autenticação foi um sucesso! 🥳
+  # utter_auth_success:
+  # - text: A autenticação foi um sucesso! 🥳
+
+  # 
+  utter_resposta_calendario:
+    - text: "As aulas começam no dia 4 de março e terminam no dia 21 de junho."
+    - text: "O semestre inicia a 4 de março e termina a 21 de junho. Consulte o calendário completo no site oficial."
+    - text: "Aulas? Começam em 4 de março e vão até 21 de junho. Quer o link do calendário completo? 😉"
 
 
   
@@ -264,3 +279,7 @@ responses:
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+actions:
+  - action_validar_credenciais
+  - action_consultar_curso
