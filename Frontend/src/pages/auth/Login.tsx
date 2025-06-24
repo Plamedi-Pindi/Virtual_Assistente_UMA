@@ -15,14 +15,14 @@ const LoginPage = () => {
 
     return (
         <div className="h-screen bg-[#E8E7E7] flex flex-col items-center ">
-            <img src={shape1} className="w-full" />
+            <img src={shape1} className="w-full " />
             <img src="./Logo.png" alt="Logo" className="w-32" />
 
             <div className="pl-6 pr-6 w-full">
                 <h1 className="text-center text-xl font-bold text-primary letter-2 mt-4 mb-4">Faça o Login</h1>
 
                 <form onSubmit={handleSubmit} className="w-full">
-                    <div className="mb-4">
+                    <div className="mb-4 text-white">
                         <input
                             type="email"
                             placeholder="Email ou número de telefone"
@@ -30,7 +30,7 @@ const LoginPage = () => {
                         />
                     </div>
 
-                    <div className="rounded-md bg-primary flex pr-4">
+                    <div className="rounded-md bg-primary flex pr-4 text-white">
                         <input
                             type="password"
                             placeholder="Senha"

@@ -1,7 +1,13 @@
+
+// Import components
 import "./onBoarding.css"
 import Button from "../Button/Button"
+
+// Import Hooks
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+
+// Import Images
 import img_boarding1 from "../../assets/img/onBoarding/1.png";
 import img_boarding2 from "../../assets/img/onBoarding/444.png";
 import img_boarding3 from "../../assets/img/onBoarding/333.png";
@@ -23,12 +29,12 @@ const onBoardingData = [
     }
 ]
 
+// Define default components
 const OnBoarding = () => {
     const [step, setStep] = useState(0);
     const navigate = useNavigate();
-
     const current = onBoardingData[step];
-
+  
     const nextStep = () => {
         if (step < onBoardingData.length - 1) {
             setStep(prev => prev + 1)
@@ -39,7 +45,7 @@ const OnBoarding = () => {
 
     return (
         <div className={`h-screen   
-            onBoard-stl object-contain  relative overflow-hidden`}>
+            onBoard-stl object-contain  relative overflow-hidden  `}>
 
             {step === 0
                 ? (
@@ -66,7 +72,7 @@ const OnBoarding = () => {
                 <Button onClick={nextStep} >{step === 2 ? "começar agora" : "Próximo"}</Button>
             </div>
 
-            <LoadingFallback/>
+            <LoadingFallback />
         </div>
     )
 }

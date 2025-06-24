@@ -9,6 +9,7 @@ import LoadingFallback from "../components/Load/Load";
 const Home = lazy(() => import("../pages/home/Home"));
 const Login = lazy(() => import("../pages/auth/Login"));
 const OnBoarding = lazy(() => import("../components/OnBoarding/OnBoarding"))
+const Chatpage = lazy(() => import("../pages/chats/Chats"));
 
 
 export default function RouteApp() {
@@ -19,8 +20,9 @@ export default function RouteApp() {
 
         <Routes>
           <Route path="/" element={<OnBoarding />} />
-          <Route path="login" element={<Login />} />
-          <Route path="home" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/virtualassistent" element={<Chatpage />} />
         </Routes>
       </Suspense>
     </Router>
