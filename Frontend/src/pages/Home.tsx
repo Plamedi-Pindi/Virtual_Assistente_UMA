@@ -12,26 +12,8 @@ export default function Home() {
   const { chatMessages } = useChat();
   const reversedMessage = [...chatMessages].reverse();
   const messagesContainerRef = useRef<HTMLDivElement>(null);
-  // const messagesEndRef = useRef<HTMLDivElement>(null);
 
   console.log(chatMessages);
-
-
-  // useEffect(() => {
-  //   const container = messagesContainerRef.current;
-  //   // const lastMessage = messagesEndRef.current;
-
-  //   if (container ) {
-  //     // lastMessage.scrollIntoView({ behavior: 'auto' });
-
-  //     const isNearBottom = container.scrollHeight - container.scrollTop - container.clientHeight < 100;
-
-  //     // if (isNearBottom) {
-  //     //   lastMessage.scrollIntoView({ behavior: 'smooth' });
-  //     // }
-  //   }
-
-  // }, [chatMessages]);
 
 
   return (
