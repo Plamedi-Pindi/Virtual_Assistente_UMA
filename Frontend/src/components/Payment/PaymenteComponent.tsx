@@ -15,7 +15,7 @@ const PayInfoItems = ({ imgUrl, title, alt, imgDimassion }: PayInfoItemsType) =>
         <motion.div
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.8 }}
-            className="w-full h-20 shadow-md rounded-xl p-3 flex justify-between items-center "
+            className="w-full h-20 shadow-md rounded-xl p-3 flex justify-between items-center hover:bg-white"
         >
             <div className="flex items-center gap-2">
                 <div className="rounded-full w-14 h-14 bg-primary flex items-center justify-center">
