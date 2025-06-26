@@ -1,51 +1,31 @@
 import axios from "axios";
 
 const rasaAPI = axios.create({
-    baseURL: "http://localhost:5005",
+    baseURL: "http://localhost:5005/webhooks/rest/webhook",
     headers: {
         "Content-Type": "application/json",
     },
+    timeout: 10000,
 });
 
-// interface RasaMessage {
-//     text: string;
-//     sender?: string;
-// }
-
-interface RasaResponse {
-    responses: {
-        text: string;
-        // Outros possíveis campos como buttons, images, etc.
-    }[];
-}
 
 //   ====
 export const sendMessageToRasa = async (
-    message: string,
-    senderId: string = 'default'
-): Promise<RasaResponse> => {
+    sender: string,
+    message: string
+) => {
     try {
-        const response = await rasaAPI.post<RasaResponse>('/webhooks/rest/webhook', {
-            sender: senderId,
-            message: message,
+
+        const response = await rasaAPI.post("", {
+            sender,
+            message,
         });
         return response.data;
     } catch (error) {
-        console.error('Error sending message to Rasa:', error);
-        throw error;
+        console.error("Erro ao enviar mensagem para o Rasa:", error);
+         throw error;
     }
-};
-
-// Para rastrear conversas (opcional)
-// export const getConversationTracker = async (senderId: string) => {
-//     try {
-//         const response = await rasaAPI.get(`/conversations/${senderId}/tracker`);
-//         return response.data;
-//     } catch (error) {
-//         console.error('Error getting conversation tracker:', error);
-//         throw error;
-//     }
-// };
+}
 
 
 export default rasaAPI;

@@ -45,7 +45,7 @@ const HomePage = () => {
     const modalDivRef = useRef<HTMLDivElement>(null);
     const modalbuttonRef = useRef<HTMLButtonElement>(null);
 
-    const displayStartChat = ()=> {
+    const displayStartChat = () => {
         setIsStartChat(true);
     }
 
@@ -122,27 +122,28 @@ const HomePage = () => {
             </header>
 
             {/*  */}
-            <section className="pl-4 pr-4 p-2 w-full mt-10 mb-4 grid grid-cols-3 gap-4 ">
-                <SquireButton
-                    onClick={() => ""}
-                    title="Emissão de documentos"
-                >
-                    <img src={icon1} className="w-8" />
-                </SquireButton>
+            <section className="pl-4 pr-4 p-2 w-full mt-10 mb-4 grid grid-cols-3 gap-x-11 gap-y-4 ">
+                    <SquireButton
+                        onClick={() => ""}
+                        title="Emissão de documentos"
+                    >
+                        <img src={icon1} className="w-8" />
+                    </SquireButton>
 
-                <SquireButton
-                    onClick={() => ""}
-                    title="Consultar as minhas notas"
-                >
-                    <img src={icon2} className="w-7" />
-                </SquireButton>
+                    <SquireButton
+                        onClick={() => ""}
+                        title="Consultar as minhas notas"
+                    >
+                        <img src={icon2} className="w-7" />
+                    </SquireButton>
 
-                <SquireButton
-                    onClick={() => ""}
-                    title="Consultar horários"
-                >
-                    <img src={icon3} className="w-8" />
-                </SquireButton>
+                    <SquireButton
+                        onClick={() => ""}
+                        title="Consultar horários"
+                    >
+                        <img src={icon3} className="w-8" />
+                    </SquireButton>
+
 
                 <SquireButton
                     onClick={() => setIsModalDisplay(true)}
@@ -233,7 +234,7 @@ const HomePage = () => {
             </Modal>
 
             {/* Start Chat */}
-            <StartChat isDisplayed={isStartChat} onClick={()=> setIsStartChat(false)} />
+            <StartChat isDisplayed={isStartChat} onClick={() => setIsStartChat(false)} />
 
         </div>
     )
