@@ -15,7 +15,7 @@ import icon6 from "../../assets/icons/6.png";
 import icon7 from "../../assets/icons/icon7.png";
 import icon8 from "../../assets/icons/icon8.png";
 import icon9 from "../../assets/icons/icon9.png";
-// import icon10 from "../../assets/icons/icon10.png";
+import icon10 from "../../assets/icons/icon10.png";
 
 // import images for banners
 import banner1 from "../../assets/banner/banner1.png";
@@ -74,7 +74,7 @@ const HomePage = () => {
 
                 setTimeout(() => {
                     divChildRef.style.opacity = `100`;
-                    divChildRef.style.height = "33rem"
+                    divChildRef.style.height = "34rem"
                 }, 250);
 
                 setIsModalDisplay((isBackCollapsed && isContentCollapsed))
@@ -224,12 +224,12 @@ const HomePage = () => {
                     imgDimassion="w-8"
                 />
 
-                {/* <PayInfoItems
+                <PayInfoItems
                     imgUrl={icon10}
                     title="Pagar Propina"
                     alt="Icon do item pagar propina"
                     imgDimassion="w-8"
-                /> */}
+                />
             </Modal>
 
             {/* Start Chat */}
