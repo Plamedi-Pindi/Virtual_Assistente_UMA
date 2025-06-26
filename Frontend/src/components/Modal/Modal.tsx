@@ -20,7 +20,9 @@ const Modal = ({ modalDivRef, modalButtonRef, children }: ModalType) => {
                     <BsChevronLeft className="text-xl text-primary " />
                     <span className="uppercase block font-bold">Pagamentos</span>
                 </button>
-                {children}
+                <div className="flex flex-col space-y-3">
+                    {children}
+                </div>
             </div>
         </div>
     )
