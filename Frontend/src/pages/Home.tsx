@@ -6,7 +6,7 @@ import ReactMarkdown from "react-markdown";
 
 // Hooks 
 import { useChat } from "../contexts/ChatContext";
-import { useEffect, useRef } from "react";
+import {  useRef } from "react";
 
 export default function Home() {
   const { chatMessages } = useChat();
