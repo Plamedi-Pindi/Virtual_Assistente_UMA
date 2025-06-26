@@ -15,7 +15,7 @@ import icon6 from "../../assets/icons/6.png";
 import icon7 from "../../assets/icons/icon7.png";
 import icon8 from "../../assets/icons/icon8.png";
 import icon9 from "../../assets/icons/icon9.png";
-import icon10 from "../../assets/icons/icon10.png";
+// import icon10 from "../../assets/icons/icon10.png";
 
 // import images for banners
 import banner1 from "../../assets/banner/banner1.png";
