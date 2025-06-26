@@ -1,7 +1,6 @@
 // Components
 import botImage from "/bot.jpg";
 import Header from "./layouts/components/Header";
-import Input from "./layouts/components/Input";
 import ReactMarkdown from "react-markdown";
 
 // Hooks 
@@ -59,7 +58,6 @@ export default function Home() {
       {/* Main content end */}
 
       {/* Input */}
-      <Input />
     </div>
   )
 }
