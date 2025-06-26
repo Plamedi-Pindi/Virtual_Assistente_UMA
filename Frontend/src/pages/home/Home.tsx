@@ -224,12 +224,12 @@ const HomePage = () => {
                     imgDimassion="w-8"
                 />
 
-                <PayInfoItems
+                {/* <PayInfoItems
                     imgUrl={icon10}
                     title="Pagar Propina"
                     alt="Icon do item pagar propina"
                     imgDimassion="w-8"
-                />
+                /> */}
             </Modal>
 
             {/* Start Chat */}
