@@ -3,13 +3,28 @@ import HeaderSection from "../../components/Header/Header";
 import ChatInputs from "../../components/Inputs/ChatInputs";
 import { ChatBox1, ChatBox2 } from "../../components/Chats/Chats";
 
+// import hooks
+import { useState } from "react";
 
+type MessageType = {
+    from: string,
+    message: string
+}
 
 const Chatpage = () => {
+    const [messages, setMessages] = useState<MessageType[]>([]);
+    const msgReversed = [...messages].reverse();
 
+    // Event to send a message
     const handleSendMessage = (msg: string) => {
-        console.log("Mensagem enviada: ", msg);
+        if(!msg.trim()) return ;
 
+        const userMsg = {
+            from: "user",
+            message: msg
+        };
+
+        setMessages((prev) => [...prev, userMsg]);
     }
 
     return (
@@ -18,31 +33,24 @@ const Chatpage = () => {
             <HeaderSection />
 
             <section className=" w-full grow pl-6 pr-6 flex flex-col-reverse items-end pb-[8rem] gap-6 relative overflow-auto">
-                <ChatBox1
-                    text="Testamos os seus componentes"
-                    position="absolute right-0"
-                    dimension="max-w-56 "
-                />
-                <ChatBox2
-                    text="Testamos os seus componentes"
-                    position=""
-                    dimension="mr-auto max-w-56"
-                />
-                <ChatBox1
-                    text="Espero que este teste do qual ti referes seja uma coisa muito profissional. Pois ja nao estamos mais na altura de ser um amador."
-                    position=""
-                    dimension="max-w-56"
-                />
-                <ChatBox2
-                    text="Testamos os seus componentes"
-                    position=""
-                    dimension="mr-auto max-w-56"
-                />
-                <ChatBox1
-                    text="Testamos os seus componentes"
-                    position=""
-                    dimension="max-w-56"
-                />
+                {msgReversed.map((msg, idx)=> msg.from === "user" ? (
+                    <ChatBox1
+                        key={idx}
+                        text={msg.message}
+                        position="absolute right-0"
+                        dimension="max-w-56 "
+                    />
+                ) : (
+
+                    <ChatBox2
+                        key={idx}
+                        text={msg.message}
+                        position=""
+                        dimension="mr-auto max-w-56"
+                    />
+                )
+            )}
+               
             </section>
 
             {/* Input */}

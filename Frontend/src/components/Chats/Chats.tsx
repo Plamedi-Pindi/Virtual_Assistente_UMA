@@ -4,6 +4,7 @@ type chatType = {
     position: string,
     dimension: string,
 }
+
 export const ChatBox1 = ({text, position, dimension}: chatType) => {
 
     return (
