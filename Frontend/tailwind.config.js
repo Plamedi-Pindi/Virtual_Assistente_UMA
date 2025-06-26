@@ -3,6 +3,9 @@ export default {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}"
   ],
+  safelist: [
+    'w-6', 'w-7', 'w-8', 'w-10', // todas as possíveis variações usadas dinamicamente
+  ],
   theme: {
     extend: {
       colors: {
