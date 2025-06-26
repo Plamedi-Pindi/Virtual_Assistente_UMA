@@ -230,6 +230,13 @@ const HomePage = () => {
                     alt="Icon do item pagar propina"
                     imgDimassion="w-8"
                 />
+
+                <PayInfoItems
+                    imgUrl={icon10}
+                    title="Pagar Propina"
+                    alt="Icon do item pagar propina"
+                    imgDimassion="w-8"
+                />
             </Modal>
 
             {/* Start Chat */}
