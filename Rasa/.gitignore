@@ -33,6 +33,9 @@ dist/
 .idea/
 *.iml
 
+# Arquivo de Ambiente
+.env
+
 # Arquivos de pacotes
 *.egg-info/
 pip-log.txt
