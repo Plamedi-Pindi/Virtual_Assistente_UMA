@@ -2,6 +2,161 @@ version: "3.1"
 
 nlu:
 
+- lookup: curso_especifico
+  examples: |
+    - Informática
+    - Análises Clínicas e Saúde Pública
+    - Engenharia Civil
+    - Engenharia Informática
+    - Engenharia do Ambiente
+    - Engenharia Mecatrónica
+    - Engenharia Industrial e Sistemas Elétricos
+    - Engenharia Agro‑pecuária
+    - Arquitetura e Urbanismo
+    - Enfermagem
+    - Cardiopneumologia
+    - Fisioterapia
+    - Ciências do Desporto e Educação Física
+    - Psicologia
+    - Biologia
+    - Direito
+    - Gestão e Administração de Empresas
+    - Economia
+    - Língua Portuguesa e Comunicação
+    - Turismo e Gestão Hoteleira
+    - Ambiente e Gestão do Território
+    - Teologia
+    - Filosofia
+    - Auditoria e Contabilidade
+    - Economia e Gestão Aplicadas
+    - Economia, Ordenamento do Território e Desenvolvimento Regional
+    - Estudos da Religião e Teologia
+    - Gestão Ambiental
+  
+
+- synonym: Arquitetura e Urbanismo
+  examples: |
+    - Arquitetura
+    - arquitetura
+    - curso de arquitetura
+
+- synonym: Engenharia Informática
+  examples: |
+    - Informática
+    - informática
+    - curso de informática
+
+- synonym: Engenharia Civil
+  examples: |
+    - engenharia civil
+
+- synonym: Enfermagem
+  examples: |
+    - enfermagem
+
+- synonym: Fisioterapia
+  examples: |
+    - fisioterapia
+
+- synonym: Economia
+  examples: |
+    - economia
+
+- synonym: Direito
+  examples: |
+    - direito
+
+- synonym: Psicologia
+  examples: |
+    - psicologia
+
+- synonym: Cardiopneumologia
+  examples: |
+    - cardio
+    - curso de cardio
+
+- synonym: Análises Clínicas e Saúde Pública
+  examples: |
+    - análises clínicas
+    - saúde pública
+
+- synonym: Ciências do Desporto e Educação Física
+  examples: |
+    - desporto
+    - educação física
+
+- synonym: Biologia
+  examples: |
+    - biologia
+
+- synonym: Engenharia do Ambiente
+  examples: |
+    - engenharia ambiental
+    - ambiente
+
+- synonym: Engenharia Mecatrónica
+  examples: |
+    - mecatrónica
+
+- synonym: Engenharia Industrial e Sistemas Elétricos
+  examples: |
+    - engenharia industrial
+    - sistemas elétricos
+
+- synonym: Engenharia Agro‑pecuária
+  examples: |
+    - agropecuária
+    - engenharia agropecuária
+
+- synonym: Gestão e Administração de Empresas
+  examples: |
+    - administração
+    - gestão de empresas
+
+- synonym: Língua Portuguesa e Comunicação
+  examples: |
+    - língua portuguesa
+    - comunicação
+
+- synonym: Turismo e Gestão Hoteleira
+  examples: |
+    - turismo
+    - gestão hoteleira
+
+- synonym: Ambiente e Gestão do Território
+  examples: |
+    - gestão do território
+
+- synonym: Teologia
+  examples: |
+    - teologia
+
+- synonym: Filosofia
+  examples: |
+    - filosofia
+
+- synonym: Auditoria e Contabilidade
+  examples: |
+    - auditoria
+    - contabilidade
+
+- synonym: Economia e Gestão Aplicadas
+  examples: |
+    - gestão aplicada
+
+- synonym: Economia, Ordenamento do Território e Desenvolvimento Regional
+  examples: |
+    - ordenamento do território
+    - desenvolvimento regional
+
+- synonym: Estudos da Religião e Teologia
+  examples: |
+    - estudos da religião
+
+- synonym: Gestão Ambiental
+  examples: |
+    - gestão ambiental
+
 - regex: numero_estudante
   examples: |
     - ^\d{5}$
@@ -81,13 +236,27 @@ nlu:
 # Cursos ESPECIFICO
 - intent: cursos_especifico
   examples: |
-    - Informática
-    - Sim, curso de Engenharia Civil  
+    - [Informática](curso_especifico)
+    - curso de Engenharia Informática 
+    - curso de [robotica] 
+    - Sim, curso de Engenharia Civil 
+    - Sim, curso de [Engenharia Civil](curso_especifico) 
     - Sim, enfermagem
     - curso de Fisioterapia   
-    - Cardiopneumologia  
+    - curso de [Língua Portuguesa e Comunicação](curso_especifico)   
+    - [Cardiopneumologia](curso_especifico_slt)  
     - quero informações sobre o curso de Economia
     - quero mais informações sobre o curso de Direito
+    - voces têm curso de [Arquitetura e Urbanismo](curso_especifico)  
+    - quero saber sobre informatica
+    - fala mais sobre [engenharia civil](curso_especifico)
+    - como é administrado o curso de [Arquitetura e Urbanismo](curso_especifico)
+    - sim, [Engenharia informática](curso_especifico)
+    - quero saber mais sobre o curso de [culinária](curso_especifico)
+    - vocês têm o curso de [astronomia](curso_especifico)?
+    - vocês têm o curso de [Educação](curso_especifico)?
+    - quero estudar [arqueologia](curso_especifico)
+
 
 # PROCESSO DE INSCRIÇÃO E MATRICOLA
 - intent: processo_inscricao

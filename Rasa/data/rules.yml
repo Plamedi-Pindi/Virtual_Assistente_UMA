@@ -6,13 +6,15 @@ rules:
 - rule: agradecimento
   steps:
   - intent: agradecimento
-  - action: utter_agradecimento
+  - action: action_ask_openai
+  # - action: utter_agradecimento
 
 # Saudação
 - rule: saudacao
   steps:
   - intent: saudacao
-  - action: utter_saudacao
+  - action: action_ask_openai
+  # - action: utter_saudacao
 
 # Sobre o Assistente
 - rule: identidade do Assistente Virtual
@@ -24,7 +26,8 @@ rules:
 - rule: Finalizar conversa
   steps:
   - intent: finalizacao
-  - action: utter_finalizacao
+  - action: action_ask_openai
+  # - action: utter_finalizacao
 
 # Cursos disponiveis
 - rule: Cursos disponiveis
@@ -54,6 +57,10 @@ rules:
 - rule: Solicitar info de um curso especifico
   steps:
   - intent: cursos_especifico
+    entities:
+    - curso_especifico: engenharia civil
+  - slot_was_set:
+    - curso_especifico_slt: engenharia civil
   - action: action_consultar_curso
 
 # Acesso ao Portal Mutue
@@ -72,40 +79,22 @@ rules:
 - rule: fora de escopo
   steps:
   - intent: fora_de_contexto
-  - action: utter_fora_de_contexto
+  - action: action_ask_openai
+  # - action: utter_fora_de_contexto
 
 #  Liguangem Inadequada
 - rule: Responder a uso de linguagens inadequada
   steps:
   - intent: linguagem_inadequada
-  - action: utter_linguagem_inadequada
+  - action: action_ask_openai
+  # - action: utter_linguagem_inadequada
 
 
 #  ################################
 - rule: Responder a uso de linguagens inadequada
   steps:
-  - intent: resposta_calendario
+  - intent: perguntar_calendario
   - action: utter_resposta_calendario
-
-
-# Auth: Iniciar autenticar o aluno
-# - rule: Iniciar autenticar o aluno
-#   steps:
-#   - intent: autenticar
-#   - action: utter_autenticacao
-#   - action: credenciais_form
-#   - active_loop: credenciais_form
-
-# # Auth: Finalizar formulario
-# - rule: Finalizar formulario
-#   condition:
-#   - active_loop: credenciais_form
-#   steps:
-#   - action: credenciais_form
-#   - active_loop: null
-#   - slot_was_set:
-#       - is_authenticated: true
-#   - action: action_validar_credenciais
 
 
 

@@ -2,22 +2,32 @@
 import HeaderSection from "../../components/Header/Header";
 import ChatInputs from "../../components/Inputs/ChatInputs";
 import { ChatBox1, ChatBox2 } from "../../components/Chats/Chats";
+
+// Import API
 import { sendMessageToRasa } from "../../apis/RasaService";
 
 // Import react markdown
 import ReactMarkdown from "react-markdown";
 
 // import hooks
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
+
+// Tipagem
 type MessageType = {
     from: string,
     message: string
 }
 
+
+// Main Component
 const Chatpage = () => {
     const [messages, setMessages] = useState<MessageType[]>([]);
     const msgReversed = [...messages].reverse();
+
+    // useEffect(() => {
+    //     getChatHistory('user123').then(setMessages)
+    // }, []);
 
     // Event to send a message
     const handleSendMessage = async (msg: string) => {
@@ -33,11 +43,18 @@ const Chatpage = () => {
         // 
         try {
             const botResponses = await sendMessageToRasa("user", msg)
-            console.log("Ate aqui");
 
             botResponses.forEach((resp: any) => {
                 if (resp.text) {
                     setMessages((prev) => [...prev, { from: "bot", message: resp.text }])
+                } else if (resp.custom) {
+
+                    const msgCustom = resp.custom.message
+
+                    setMessages((prev) => [
+                        ...prev,
+                        { from: "bot", message: msgCustom }
+                    ]);
                 }
             });
         } catch (error) {
@@ -64,14 +81,21 @@ const Chatpage = () => {
                     <ChatBox2
                         key={idx}
                         position=""
-                        dimension="mr-auto max-w-56"
+                        dimension="mr-auto max-w-72"
                     >
                         <ReactMarkdown
                             components={{
                                 strong: ({ children }) => <strong className="font-bold">{children}</strong>,
                                 ul: ({ children }) => <ul className="list-disc pl-5 text-sm">{children}</ul>,
                                 p: ({ children }) => <p className="mb-2 mt-2">{children}</p>,
-                                a: ({ children }) => <a className="text-blue-700">{children}</a>,
+                                a: ({ children, href }) => (
+                                    <a
+                                        href={href}
+                                        className="text-blue-700"
+                                    >
+                                        {children}
+                                    </a>
+                                ),
                                 h1: ({ children }) => <h1 className="font-bold mb-2">{children}</h1>,
                                 h2: ({ children }) => <h1 className="font-semibold mb-1 mt-2">{children}</h1>,
                             }}

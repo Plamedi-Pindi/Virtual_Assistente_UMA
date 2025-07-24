@@ -5,7 +5,7 @@ stories:
 - story: Comversa sobre inscricoes
   steps:
   - intent: saudacao
-  - action: utter_saudacao
+  - action: action_ask_openai
   - intent: processo_inscricao
   - action: utter_processo_inscricao
 
