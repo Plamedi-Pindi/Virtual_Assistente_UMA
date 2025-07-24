@@ -39,4 +39,4 @@ dist/
 # Arquivos de pacotes
 *.egg-info/
 pip-log.txt
-pip-delete-this-directory.txt
+pip-delete-this-directory.txt.env
