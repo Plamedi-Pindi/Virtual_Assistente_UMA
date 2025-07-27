@@ -5,6 +5,7 @@ import os
 load_dotenv() # Carrega variáveis do .env
 
 MONGO_URL = os.getenv("MONGO_URL")
+MONGO_NAME = os.getenv("MONGO_NAME")
 client = AsyncIOMotorClient(MONGO_URL)
-db = client["uma_virtual_assistent"]
+db = client[MONGO_NAME]
 

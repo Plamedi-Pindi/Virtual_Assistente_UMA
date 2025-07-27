@@ -1,10 +1,7 @@
 from fastapi import APIRouter, Query
 from fastapi.responses import JSONResponse
-# from thefuzz import fuzz
-# from thefuzz import process
 from rapidfuzz import fuzz, process
 from typing import List
-
 import unicodedata
 
 from db.database import db   # Import database
