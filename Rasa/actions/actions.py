@@ -1,8 +1,3 @@
-
-# https://rasa.com/docs/rasa/custom-actions
-
-
-
 from typing import Any, Text, Dict, List
 
 from openai import OpenAI
@@ -17,24 +12,7 @@ import os
 
 load_dotenv()
 
-API = os.getenv("API_ENDPOINT")
-
-# with open('Data.json', 'r', encoding='utf-8') as arquivo:
-#     Dados = json.load(arquivo)
-   
-# Credencias dos alunos
-Alunos = [
-    {
-        "id": 1,
-        "numeroEst": "12345",
-        "senha": 'Senha@1234'
-    },
-    {
-        "id": 1,
-        "numeroEst": "23456",
-        "senha": 'Minhasenha@1234'
-    },
-]
+API = os.getenv("API_ENDPOINT")    
 
 ########## #############
 class ActionFindCourse(Action):
@@ -47,15 +25,30 @@ class ActionFindCourse(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         curso_especifico  = tracker.get_slot("curso_especifico_slt")
-        
-        print(curso_especifico)
+
         response = requests.get(f"{API}/cursosinfo?termo={curso_especifico}")
         if response.status_code == 200:
             message = response.json()
             if message["isList"] == False:
-                print(message)  
-                # print(message["details"])  
                 dispatcher.utter_message(text=message["details"])
+                return [SlotSet("curso_especifico_slt", None)]
+                
+            if message["isList"] == True:
+                response =  (
+                    "### 📘 A **UMA** possui muitos cursos de **engenharia**\n"
+                    "Qual especificamente gostarias de saber?\n" +
+                    "\n".join(f"- {curso}" for curso in message['cursos'])
+                )
+                dispatcher.utter_message(text=response)
+                return [SlotSet("curso_especifico_slt", None)]
+            
+            if "isFound" in message and message["isFound"] == False:
+                response = (
+                    f"⚠️ O curso **{curso_especifico}** não foi encontrado na base de dados da UMA.\n\n"
+                    "Poderias verificar se escreveste corretamente ou tentar outro curso?"
+                )
+                dispatcher.utter_message(text= response)
+                return [SlotSet("curso_especifico_slt", None)]
             
         else:
             message = response.json()

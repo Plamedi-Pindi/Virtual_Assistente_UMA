@@ -50,8 +50,9 @@ async def find_curso(termo: str = Query(..., min_length=1)) :
     for curso in curso_nomes:
         if termo == curso.lower():
             queryResult = [curso]
+            # break
     
-     # Busca parcial (contendo o termo)
+    #  Busca parcial (contendo o termo)
     resultados = [curso for curso in curso_nomes if termo in curso.lower()]
     if resultados:
         queryResult = resultados
@@ -69,13 +70,11 @@ async def find_curso(termo: str = Query(..., min_length=1)) :
     
     queryResult = resultados_filtrados 
     
-    
     if queryResult and len(queryResult) == 1:    
         response = None
         for curso in cursos:
             if "nome" in curso and curso["nome"] == queryResult[0]:
                 response = {
-                    "status": 200,
                     "isList": False,
                     "curso": curso["nome"],
                     "details": curso["descricao"]
@@ -83,7 +82,6 @@ async def find_curso(termo: str = Query(..., min_length=1)) :
         return response
     if  queryResult and len(queryResult) > 1:
         response = {
-            "status": 200,
             "isList": True,
             "cursos": queryResult
         }
@@ -91,8 +89,7 @@ async def find_curso(termo: str = Query(..., min_length=1)) :
     
     else:
         response = {
-            "status": 200,
-            "curso": False,
+            "isFound": False,
             "message": "Nenhum curso semelhante encontrado."
         }
         return response

@@ -50,8 +50,8 @@ policies:
     enable_fallback_predication: True
   - name: UnexpecTEDIntentPolicy
     max_history: 5
-    epochs: 200
+    epochs: 300
   - name: TEDPolicy
     max_history: 10
-    epochs: 200
+    epochs: 300
     constrain_similarities: true

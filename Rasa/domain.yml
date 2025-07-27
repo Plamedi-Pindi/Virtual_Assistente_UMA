@@ -35,6 +35,13 @@ slots:
     - type: from_entity
       entity: curso_especifico
 
+  curso_especifico:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: curso_especifico
+
   numero_estudante_slt:
     type: text
     influence_conversation: true
@@ -80,20 +87,6 @@ responses:
   utter_default:
   - text: Desculpa eu não entendi. Você pode reformular?
 
-  # Fora de Escopo
-  # utter_fora_de_contexto:
-  # - text: Desculpe, não fui treinado para esse assunto. Posso ajudar apenas com informações relacionadas à Universidade Metodista de Angola
-
-  # Linguagem Inadequada
-  # utter_linguagem_inadequada:
-  # - text: "Por favor, mantenha o respeito. Estou aqui para ajudar com informações da Universidade Metodista de Angola."
-  # - text: "Uso de linguagem ofensiva não é tolerado. Posso te ajudar com algo relacionado à universidade?"
-  # - text: "Vamos manter uma conversa respeitosa. Se precisar de ajuda acadêmica, estou à disposição."
-
-  # Greeting Responses
-  # utter_saudacao:
-  # - text: Olá! Eu sou o Assistente Virtual da Universidade Metodista de Angola. Em que posso ajudar hoje?
-  
   utter_cursos_disponiveis:
   - text: A UMA oferece diversos cursos de **licenciatura**, **mestrado** e **doutoramento**. Poderia especificar qual curso ou área de interesse?
 
@@ -223,18 +216,6 @@ responses:
         Estou aqui para te ajudar com informações sobre cursos, matrículas, horários e muito mais.  
         Pergunta-me o que quiser! 😊
 
-  # Finalization Response
-  # utter_finalizacao:
-  # - text: Até breve! Se precisar de mais informações, estarei por aqui. 😊
-  # - text: Tchau! Volte sempre que precisar. 👋
-  # - text: Foi um prazer ajudar! Até a próxima. 🚀
-
-  # Thanks Response
-  # utter_agradecimento:
-  # - text: De nada! Se precisar de mais alguma coisa, estou por aqui. 😊
-  # - text: Fico feliz em ajudar! Qualquer coisa, só chamar.
-  # - text: Você é sempre bem-vindo! Precisando, estou à disposição. 👋
-
   # Respostar sobre Como acessar o Portal Mutue
   utter_acesso_portal_mutue:
   - custom:
@@ -274,17 +255,12 @@ responses:
   utter_ask_credenciais_form_senha_estudante_slt:
   - text: Agora informe a **senha da sua conta**, por favor.
 
-  # utter_auth_success:
-  # - text: A autenticação foi um sucesso! 🥳
-
   # 
   utter_resposta_calendario:
     - text: "As aulas começam no dia 4 de março e terminam no dia 21 de junho."
     - text: "O semestre inicia a 4 de março e termina a 21 de junho. Consulte o calendário completo no site oficial."
     - text: "Aulas? Começam em 4 de março e vão até 21 de junho. Quer o link do calendário completo? 😉"
 
-
-  
 # Session Configuration ===========================================================
 session_config:
   session_expiration_time: 60

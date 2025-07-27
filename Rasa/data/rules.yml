@@ -57,10 +57,6 @@ rules:
 - rule: Solicitar info de um curso especifico
   steps:
   - intent: cursos_especifico
-    entities:
-    - curso_especifico: engenharia civil
-  - slot_was_set:
-    - curso_especifico_slt: engenharia civil
   - action: action_consultar_curso
 
 # Acesso ao Portal Mutue

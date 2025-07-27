@@ -4,14 +4,14 @@ nlu:
 
 - lookup: curso_especifico
   examples: |
-    - Informática
+    - Engenharia
     - Análises Clínicas e Saúde Pública
-    - Engenharia Civil
-    - Engenharia Informática
-    - Engenharia do Ambiente
-    - Engenharia Mecatrónica
-    - Engenharia Industrial e Sistemas Elétricos
-    - Engenharia Agro‑pecuária
+    - Civil
+    - Informática
+    - do Ambiente
+    - Mecatrónica
+    - Industrial e Sistemas Elétricos
+    - Agropecuária
     - Arquitetura e Urbanismo
     - Enfermagem
     - Cardiopneumologia
@@ -40,15 +40,15 @@ nlu:
     - arquitetura
     - curso de arquitetura
 
-- synonym: Engenharia Informática
+- synonym: Informática
   examples: |
     - Informática
     - informática
     - curso de informática
 
-- synonym: Engenharia Civil
+- synonym: Civil
   examples: |
-    - engenharia civil
+    - civil
 
 - synonym: Enfermagem
   examples: |
@@ -89,24 +89,26 @@ nlu:
   examples: |
     - biologia
 
-- synonym: Engenharia do Ambiente
+- synonym: Ambiente
   examples: |
-    - engenharia ambiental
+    - ambiental
     - ambiente
 
-- synonym: Engenharia Mecatrónica
+- synonym: Mecatrónica
   examples: |
     - mecatrónica
 
-- synonym: Engenharia Industrial e Sistemas Elétricos
+- synonym: Industrial e Sistemas Elétricos
   examples: |
-    - engenharia industrial
+    - industrial
     - sistemas elétricos
+    - sistemas
+    - sistema
 
-- synonym: Engenharia Agro‑pecuária
+- synonym: Agropecuária
   examples: |
     - agropecuária
-    - engenharia agropecuária
+    - agropecuária
 
 - synonym: Gestão e Administração de Empresas
   examples: |
@@ -157,13 +159,13 @@ nlu:
   examples: |
     - gestão ambiental
 
-- regex: numero_estudante
-  examples: |
-    - ^\d{5}$
+# - regex: numero_estudante
+#   examples: |
+#     - ^\d{5}$
 
-- regex: senha_estudante
-  examples: |
-    - (?=.*[a-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}
+# - regex: senha_estudante
+#   examples: |
+#     - (?=.*[a-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}
 
 # Greentgs Intent
 - intent: saudacao
@@ -239,23 +241,32 @@ nlu:
     - [Informática](curso_especifico)
     - curso de Engenharia Informática 
     - curso de [robotica] 
-    - Sim, curso de Engenharia Civil 
-    - Sim, curso de [Engenharia Civil](curso_especifico) 
+    - Sim, cursos de Engeharia  
+    - Cursos de [engenharia](curso_especifico)
+    - Curso de [engenharia](curso_especifico)
+    - Curso de engenharia
+    - Sim, curso de Engeharia [Civil](curso_especifico) 
     - Sim, enfermagem
     - curso de Fisioterapia   
     - curso de [Língua Portuguesa e Comunicação](curso_especifico)   
-    - [Cardiopneumologia](curso_especifico_slt)  
+    - [Cardiopneumologia](curso_especifico)  
     - quero informações sobre o curso de Economia
     - quero mais informações sobre o curso de Direito
     - voces têm curso de [Arquitetura e Urbanismo](curso_especifico)  
-    - quero saber sobre informatica
-    - fala mais sobre [engenharia civil](curso_especifico)
+    - quero saber sobre engeharia [informatica](curso_especifico)
+    - fala mais sobre engeharia [civil](curso_especifico)
     - como é administrado o curso de [Arquitetura e Urbanismo](curso_especifico)
-    - sim, [Engenharia informática](curso_especifico)
+    - quero saber sobre os cursos de [engenharia](curso_especifico)
+    - sim, [informática](curso_especifico)
     - quero saber mais sobre o curso de [culinária](curso_especifico)
     - vocês têm o curso de [astronomia](curso_especifico)?
     - vocês têm o curso de [Educação](curso_especifico)?
     - quero estudar [arqueologia](curso_especifico)
+    - existe o curso de [Cibersegurança](curso_especifico)?
+    - quero me matricular em [Tecnologia Agrícola](curso_especifico)
+    - quero estudar [Nanotecnologia Aplicada](curso_especifico)
+    - vocês têm [Robótica Avançada](curso_especifico)?
+    - desejo saber mais sobre [Ciência de Dados](curso_especifico)
 
 
 # PROCESSO DE INSCRIÇÃO E MATRICOLA
