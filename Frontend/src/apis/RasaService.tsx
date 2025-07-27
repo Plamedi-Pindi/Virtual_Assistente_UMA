@@ -1,8 +1,9 @@
 import axios from "axios";
+const RasaAPI = import.meta.env.VITE_RASA_URL 
 
 // #########
 const rasaAPI = axios.create({
-    baseURL: "http://localhost:5005/webhooks/rest/webhook",
+    baseURL: `${RasaAPI}/webhooks/rest/webhook`,
     headers: {
         "Content-Type": "application/json",
     },
