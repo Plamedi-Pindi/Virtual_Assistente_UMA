@@ -9,9 +9,6 @@ WORKDIR /app
 # Copia todos os arquivos do contexto atual para o container
 COPY . /app
 
-# Dá permissão de execução ao script de inicialização (ainda como root)
-RUN chmod +x /app/start.sh
-
 # Cria um ambiente virtual
 RUN python -m venv /app/venv
 
