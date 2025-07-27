@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Ativa o venv
+. ./venv/bin/activate
+
 # Inicia o servidor de ações personalizado em segundo plano
 rasa run actions --port 5055 &
 

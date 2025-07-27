@@ -6,7 +6,11 @@ WORKDIR /app
 
 COPY . /app
 
-RUN pip install -r requirements.txt
+# Cria um ambiente virtual
+RUN python -m venv venv
+
+# Ativa o ambiente virtual e instala dependências
+RUN . ./venv/bin/activate && pip install -r requirements.txt
 
 # Treina o modelo ao construir a imagem
 RUN rasa train
