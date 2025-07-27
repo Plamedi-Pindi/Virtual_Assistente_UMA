@@ -19,4 +19,4 @@ RUN /bin/bash -c "source /app/venv/bin/activate && pip install --upgrade pip && 
 RUN rasa train
 
 # Comando de inicialização
-CMD ["./start.sh"]
+CMD ["/bin/bash", "./start.sh"]
