@@ -18,5 +18,6 @@ RUN /bin/bash -c "source /app/venv/bin/activate && pip install --upgrade pip && 
 # Treina o modelo
 RUN rasa train
 
-# Comando de inicialização
-CMD ["/bin/bash", "./start.sh"]
+# Sobrescreve o entrypoint para poder usar ./start.sh
+ENTRYPOINT []
+CMD ["bash", "./start.sh"]
