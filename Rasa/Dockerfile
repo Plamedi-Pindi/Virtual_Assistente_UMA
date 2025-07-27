@@ -1,24 +1,25 @@
 # Dockerfile
 
-FROM rasa/rasa:3.6.21  
+# Imagem base do Rasa
+FROM rasa/rasa:3.6.21
 
+# Define o diretório de trabalho
 WORKDIR /app
 
+# Copia todos os arquivos do contexto atual para o container
 COPY . /app
 
+# Dá permissão de execução ao script de inicialização (ainda como root)
+RUN chmod +x /app/start.sh
+
 # Cria um ambiente virtual
-RUN python -m venv venv
+RUN python -m venv /app/venv
 
-# Ativa o ambiente virtual e instala dependências
-RUN . ./venv/bin/activate && pip install -r requirements.txt
+# Ativa o ambiente virtual e instala as dependências
+RUN /bin/bash -c "source /app/venv/bin/activate && pip install --upgrade pip && pip install -r /app/requirements.txt"
 
-# Treina o modelo ao construir a imagem
+# Treina o modelo
 RUN rasa train
 
-# Dá permissão de execução ao script de inicialização
-RUN chmod +x start.sh
-
-# Comando que roda tanto o servidor de ações quanto o core
+# Comando de inicialização
 CMD ["./start.sh"]
-
-# CMD ["rasa", "run", "--enable-api", "--cors", "*", "--debug", "--port", "8000"]
