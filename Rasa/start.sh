@@ -12,4 +12,4 @@ rasa run \
   --cors "*" \
   --debug \
   --port $PORT \
-  --credentials credentials.yml
+  --credentials credentials.render.yml

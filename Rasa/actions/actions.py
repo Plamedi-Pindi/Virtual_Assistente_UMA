@@ -12,7 +12,12 @@ import os
 
 load_dotenv()
 
-API = os.getenv("API_ENDPOINT")    
+API = os.getenv("API_ENDPOINT")  
+
+Alunos = [
+    {"numeroEst": "12345", "senha": "abc123"},
+    {"numeroEst": "67890", "senha": "senha456"},
+]  
 
 ########## #############
 class ActionFindCourse(Action):
@@ -23,6 +28,10 @@ class ActionFindCourse(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        if not API:
+            dispatcher.utter_message(text="⚠️ O sistema está fora do ar no momento. Tente mais tarde.")
+            return []
         
         curso_especifico  = tracker.get_slot("curso_especifico_slt")
 
@@ -51,8 +60,11 @@ class ActionFindCourse(Action):
                 return [SlotSet("curso_especifico_slt", None)]
             
         else:
-            message = response.json()
-            dispatcher.utter_message(text=message["message"])
+            try:
+                message = response.json()
+                dispatcher.utter_message(text=message.get("message", "Erro ao consultar o curso."))
+            except:
+                dispatcher.utter_message(text="❌ Ocorreu um erro ao consultar o curso. Tente novamente mais tarde.")
         return []
 
 
