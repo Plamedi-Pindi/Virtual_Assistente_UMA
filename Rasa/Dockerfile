@@ -1,13 +1,14 @@
-FROM python:3.11-slim
+FROM rasa/rasa:3.6.21-full
 
+USER root
 WORKDIR /app
+
 COPY . /app
 
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
+# Copie dependências extras (caso tenha bibliotecas adicionais)
+RUN pip install --no-cache-dir -r requirements.txt || true
 
 EXPOSE 5005
 EXPOSE 5055
 
-# default command para Web Service: run apenas Rasa
 CMD ["bash", "start.sh"]

@@ -1,11 +1,7 @@
-#!/usr/bin/env bash
-# inicia Rasa e FastAPI
+#!/bin/bash
 
-# Executa servidor de ações (mas em Render rodará no worker separado)
-uvicorn app.main:app --host 0.0.0.0 --port 8000 &
+echo "Iniciando custom actions na porta 5055..."
+rasa run actions --port 5055 &
 
-# Treina modelo (se necessário) ou usa modelo pré‑treinado
-rasa train
-
-# Inicia servidor Rasa
+echo "Iniciando Rasa server na porta $PORT..."
 rasa run --enable-api --cors "*" --port $PORT
