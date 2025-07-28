@@ -10,7 +10,7 @@ import { sendMessageToRasa } from "../../apis/RasaService";
 import ReactMarkdown from "react-markdown";
 
 // import hooks
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 
 // Tipagem
