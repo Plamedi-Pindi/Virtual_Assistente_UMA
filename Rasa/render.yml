@@ -6,3 +6,8 @@ services:
     branch: main
     region: oregon
     autoDeploy: true
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PORT
+        value: 8000  # Render usará isso no build, mas é sobrescrito automaticamente no runtime
+    autoDeploy: true
