@@ -1,17 +1,16 @@
 FROM rasa/rasa:3.6.21-full
 
-# diretório de trabalho
+USER root
 WORKDIR /app
 
-# copiar arquivos
 COPY . /app
 
-# treinar o modelo
-RUN rasa train
+RUN pip install --no-cache-dir -r requirements.txt
 
-# expor porta (usando variável)
-ENV PORT 5005
-EXPOSE $PORT
+# Expõem porta padrão HTTP do Rasa
+EXPOSE 5005
 
-# rodar o servidor com API habilitada
-CMD ["rasa","run","--enable-api","--cors","*","--port","5005"]
+USER 1001
+
+# Comando para rodar Rasa com API habilitada
+CMD ["run", "--enable-api", "--cors", "*", "--port", "5005"]
