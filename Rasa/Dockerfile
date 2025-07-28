@@ -12,6 +12,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE $PORT
 
 USER 1001
-CMD ["sh", "-c", "rasa run --enable-api --cors '*' --port ${PORT}"]
+CMD ["./start.sh"]
 
 
