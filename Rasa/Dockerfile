@@ -1,23 +1,16 @@
-FROM python:3.10-slim
+FROM rasa/rasa:3.6.21-full
 
-# Instala dependências do sistema
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    python3-dev \
-    curl \
-    git \
-    && apt-get clean
-
-# USER root
+# Muda para o diretório de trabalho
 WORKDIR /app
 
+# Copia todo o conteúdo do projeto
 COPY . /app
 
-# Copie dependências extras (caso tenha bibliotecas adicionais)
-RUN pip install --upgrade pip
+# Instala dependências adicionais, se existirem
 RUN pip install --no-cache-dir -r requirements.txt || true
 
-EXPOSE 5005
-EXPOSE 5055
+# Exponha as portas usadas pelo Rasa e pelo servidor de actions
+EXPOSE 5005 5055
 
+# Executa o script de inicialização
 CMD ["bash", "start.sh"]
