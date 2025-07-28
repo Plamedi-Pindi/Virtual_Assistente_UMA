@@ -1,16 +1,18 @@
 FROM rasa/rasa:3.6.21-full
 
-# Muda para o diretório de trabalho
+# Define diretório de trabalho
 WORKDIR /app
 
-# Copia todo o conteúdo do projeto
+# Copia todos os arquivos da aplicação para dentro do container
 COPY . /app
 
-# Instala dependências adicionais, se existirem
-RUN pip install --no-cache-dir -r requirements.txt || true
+# (Opcional) Instala dependências extras do requirements.txt
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt || true
 
-# Exponha as portas usadas pelo Rasa e pelo servidor de actions
-EXPOSE 5005 5055
+# Expõe as portas para Rasa e Custom Actions
+EXPOSE 5005
+EXPOSE 5055
 
-# Executa o script de inicialização
+# Comando que executa tanto o servidor de actions quanto o servidor Rasa
 CMD ["bash", "start.sh"]
