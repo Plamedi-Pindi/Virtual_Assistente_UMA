@@ -44,4 +44,4 @@
 
 # Webhook
 action_endpoint:
-  url: "http://localhost:5055/webhook"
+  url: "https://virtual-assistente-rasa.onrender.com/webhook"
