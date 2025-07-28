@@ -7,6 +7,7 @@ WORKDIR /app
 COPY . /app
 
 # (Opcional) Instala dependências extras do requirements.txt
+RUN chmod +x start.sh
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt || true
 
