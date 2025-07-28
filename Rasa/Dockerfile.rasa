@@ -1,0 +1,17 @@
+FROM rasa/rasa:3.6.21-full
+
+# diretório de trabalho
+WORKDIR /app
+
+# copiar arquivos
+COPY . /app
+
+# treinar o modelo
+RUN rasa train
+
+# expor porta (usando variável)
+ENV PORT 5005
+EXPOSE $PORT
+
+# rodar o servidor com API habilitada
+CMD ["rasa","run","--enable-api","--cors","*","--port","5005"]
