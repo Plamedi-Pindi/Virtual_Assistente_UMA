@@ -16,4 +16,4 @@ EXPOSE 5005
 EXPOSE 5055
 
 # Comando que executa tanto o servidor de actions quanto o servidor Rasa
-CMD ["bash", "start.sh"]
+CMD ["/bin/bash", "/app/start.sh"]
