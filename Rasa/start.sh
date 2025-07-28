@@ -1,9 +1,11 @@
-#!/bin/sh
+#!/usr/bin/env bash
+# inicia Rasa e FastAPI
 
-echo "Iniciando Rasa com porta $PORT"
+# Executa servidor de ações (mas em Render rodará no worker separado)
+uvicorn app.main:app --host 0.0.0.0 --port 8000 &
 
-# Adiciona caminho onde rasa está instalado à variável PATH
-export PATH="/app/.local/bin:$PATH"
+# Treina modelo (se necessário) ou usa modelo pré‑treinado
+rasa train
 
-# Executa o rasa com o PATH atualizado
-rasa run --enable-api --cors "*" --port ${PORT}
+# Inicia servidor Rasa
+rasa run --enable-api --cors "*" --port $PORT

@@ -1,16 +1,13 @@
-FROM rasa/rasa:3.6.21-full
+FROM python:3.11-slim
 
-
-USER root
 WORKDIR /app
-
 COPY . /app
 
-# Instala dependências extras, se necessário
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 
-EXPOSE $PORT
+EXPOSE 5005
+EXPOSE 5055
 
-CMD ["./start.sh"]
-
-
+# default command para Web Service: run apenas Rasa
+CMD ["bash", "start.sh"]
