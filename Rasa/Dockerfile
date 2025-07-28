@@ -11,7 +11,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE $PORT
 
-USER 1001
 CMD ["./start.sh"]
 
 
