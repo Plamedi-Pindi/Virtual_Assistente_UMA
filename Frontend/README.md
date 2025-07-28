@@ -12,6 +12,7 @@ Este é o frontend de um chatbot desenvolvido com React.js, Vite, Tailwind CSS e
 
 * [TypeScript](https://www.typescriptlang.org/)
 
+
 ## 🔗 Como Executar o Projeto
 
 1. **Clone o repositório**
