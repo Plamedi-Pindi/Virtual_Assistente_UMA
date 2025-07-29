@@ -17,8 +17,7 @@ import { useState } from "react";
 type MessageType = {
     from: string,
     message: string
-}
-
+} 
 
 // Main Component
 const Chatpage = () => {
