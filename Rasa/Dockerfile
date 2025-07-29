@@ -11,6 +11,9 @@ RUN chmod +x start.sh
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt || true
 
+# Sobrescreve o entrypoint padrão da imagem rasa
+ENTRYPOINT []
+
 # Expõe as portas para Rasa e Custom Actions
 EXPOSE 5005
 EXPOSE 5055
