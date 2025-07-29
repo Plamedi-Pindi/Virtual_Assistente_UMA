@@ -1,10 +1,11 @@
 #!/bin/bash
 
-echo "Verificando se Rasa está disponível..."
-which rasa || echo "rasa não encontrado no PATH"
+echo "Iniciando Rasa na porta $PORT"
 
-echo "Iniciando custom actions..."
-/usr/local/bin/rasa run actions --port 5055 &
+export PATH="/app/.local/bin:$PATH"
 
-echo "Iniciando Rasa server..."
-/usr/local/bin/rasa run --enable-api --cors "*" --port ${PORT:-5005}
+# Inicializa Rasa e a API
+rasa run \
+  --enable-api \
+  --cors "*" \
+  --port ${PORT:-5005}
