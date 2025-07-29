@@ -1,9 +1,7 @@
 #!/bin/bash
 
-export PATH="/root/.local/bin:$PATH"
-
 echo "Verificando se Rasa está disponível..."
-which rasa || echo "Rasa não encontrado no PATH"
+which rasa || echo "rasa não encontrado no PATH"
 
 echo "Iniciando custom actions..."
 rasa run actions --port 5055 &

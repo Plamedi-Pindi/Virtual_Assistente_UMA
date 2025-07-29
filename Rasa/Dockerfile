@@ -1,18 +1,14 @@
-FROM python:3.10-slim
+FROM rasa/rasa:3.6.21-full
 
-ENV PATH="/root/.local/bin:$PATH"
-
+USER root
 WORKDIR /app
-
 COPY . /app
 
-RUN pip install --upgrade pip && \
-    pip install rasa==3.6.21 rasa-sdk==3.6.2 && \
-    pip install -r requirements.txt
+# Instale as libs extras do requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 RUN chmod +x /app/start.sh
 
-EXPOSE 5005
-EXPOSE 5055
+EXPOSE 5005 5055
 
-CMD ["/app/start.sh"]
+CMD ["/bin/bash", "/app/start.sh"]
