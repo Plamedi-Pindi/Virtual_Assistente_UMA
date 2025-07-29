@@ -7,7 +7,7 @@ __pycache__/
 *.pyd
 
 # Arquivos do Rasa gerados automaticamente
-# models/
+models/
 cache/
 data/test_results/
 data/core/
