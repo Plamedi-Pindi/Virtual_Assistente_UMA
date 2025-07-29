@@ -7,6 +7,9 @@ COPY . /app
 
 RUN pip install --no-cache-dir -r requirements.txt
 
+COPY start.sh /app/start.sh
+RUN chmod +x /app/start.sh
+
 ENTRYPOINT []
 
-CMD ["sh", "-c", "python -m rasa_sdk.endpoint --port ${PORT}"]
+CMD ["./start.sh"]
