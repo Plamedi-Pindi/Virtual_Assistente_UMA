@@ -9,4 +9,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 ENTRYPOINT []
 
-CMD ["sh", "-c", "python -m rasa_sdk.endpoint --port ${PORT:-5055}"]
+CMD ["sh", "-c", "python -m rasa_sdk.endpoint --port ${PORT}"]
