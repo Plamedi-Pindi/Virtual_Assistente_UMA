@@ -5,5 +5,4 @@ COPY . /app
 
 RUN pip install -r requirements.txt || true
 
-RUN chmod +x start.sh
-CMD ["./start.sh"]
+CMD ["sh", "-c", "python -m rasa_sdk.endpoint --port ${PORT:-5055}"]
