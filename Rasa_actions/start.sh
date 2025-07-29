@@ -1,8 +1,7 @@
 # #!/bin/sh
+
 # echo "PORT = $PORT"
 # exec python -m rasa_sdk.endpoint --port $PORT
-
-#!/bin/sh
 
 echo "🔧 Porta definida pelo Railway: $PORT"
 
