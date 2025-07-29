@@ -45,4 +45,4 @@
 # Webhook
 action_endpoint:
   # url: "http://localhost:5055/webhook"
-  url: "http://asctionsever-production.up.railway.app/webhook"
+  url: "https://asctionsever-production.up.railway.app/webhook"
