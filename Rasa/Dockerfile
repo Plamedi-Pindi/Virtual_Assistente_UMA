@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.10-slim
 
 # Atualiza PATH para instalar binaries pip --user
 ENV PATH="/root/.local/bin:$PATH"
