@@ -1,22 +1,18 @@
 FROM python:3.10-slim
 
-# Atualiza PATH para instalar binaries pip --user
 ENV PATH="/root/.local/bin:$PATH"
 
-# Define diretório de trabalho
 WORKDIR /app
 
-# Copia todos os arquivos da aplicação para dentro do container
 COPY . /app
 
-# Instala dependências
 RUN pip install --upgrade pip && \
     pip install rasa==3.6.21 rasa-sdk==3.6.2 && \
-    pip install -r requirements.txt || true
+    pip install -r requirements.txt
 
-# Expõe as portas para Rasa e Custom Actions
+RUN chmod +x /app/start.sh
+
 EXPOSE 5005
 EXPOSE 5055
 
-# Comando que executa tanto o servidor de actions quanto o servidor Rasa
-CMD ["/bin/bash", "/app/start.sh"]
+CMD ["/app/start.sh"]
