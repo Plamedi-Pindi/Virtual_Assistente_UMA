@@ -11,8 +11,8 @@ COPY . /app
 
 # Instala dependências
 RUN pip install --upgrade pip && \
-    pip install --user rasa==3.6.21 rasa-sdk==3.6.2 && \
-    pip install --user -r requirements.txt || true
+    pip install rasa==3.6.21 rasa-sdk==3.6.2 && \
+    pip install -r requirements.txt || true
 
 # Expõe as portas para Rasa e Custom Actions
 EXPOSE 5005
