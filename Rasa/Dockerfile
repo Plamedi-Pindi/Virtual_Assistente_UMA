@@ -21,4 +21,4 @@ EXPOSE 5005
 EXPOSE 5055
 
 # Executa o script
-CMD ["/app/start.sh"]
+CMD ["bash", "/app/start.sh"]
