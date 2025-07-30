@@ -44,7 +44,7 @@ const OnBoarding = () => {
     }
 
     return (
-        <div className={`h-screen   
+        <div className={`h-dvh 
             onBoard-stl object-contain  relative overflow-hidden  `}>
 
             {step === 0
