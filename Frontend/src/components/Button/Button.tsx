@@ -22,7 +22,7 @@ const Button = ({ children, onClick }: ButtonProps) => {
       whileHover={{ scale: 1.2 }}
       whileTap={{ scale: 0.8 }}
       onClick={onClick}
-      className={` uppercase block m-auto w-[18rem] h-10 bg-[#14113E] text-white text-sm rounded-full duration-200 `}
+      className={` uppercase block m-auto w-[18rem] h-14 bg-[#14113E] text-white text-xs rounded-full duration-200 `}
     >
       {children}
     </motion.button>

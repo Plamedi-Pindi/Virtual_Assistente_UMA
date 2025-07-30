@@ -16,7 +16,7 @@ import LoadingFallback from "../Load/Load";
 
 const onBoardingData = [
     {
-        title: "Bem-vindo ao app da metodista",
+        title: "Bem-vindo ao app da Metodista",
         descriptio: "Formamos líderes com valores, conhecimento e visão de futuro.",
     },
     {
@@ -56,14 +56,14 @@ const OnBoarding = () => {
                     : (<img src={img_boarding3} alt="" className="absolute -top-[1rem]" />)
             }
 
-            <div className="bg-[#e8e7e7] h-[18rem] w-full absolute bottom-0 rounded-t-[2rem] p-2 text-center">
-                <div className="flex justify-center items-center mt-4 mb-4 gap-1 ">
+            <div className="bg-[#e8e7e7] h-[18rem] w-full absolute bottom-0 rounded-t-[2rem] p-2 mb-3 text-center">
+                <div className="flex justify-center items-center mt-4 mb-5 gap-1 ">
                     <button className={` ${step === 0 ? 'w-7 bg-[#D72229]' : 'w-2 bg-[#D9D9D9]'}  h-2 rounded-full bloch`}></button>
                     <button className={`${step === 1 ? 'w-7 bg-[#D72229]' : 'w-2 bg-[#D9D9D9]'}  h-2 rounded-full  bloch`}></button>
                     <button className={`${step === 2 ? 'w-7 bg-[#D72229]' : 'w-2 bg-[#D9D9D9]'}  h-2 rounded-full bloch`}></button>
                 </div>
 
-                <div className="m-auto w-[66.5%] h-36 mb-4 ">
+                <div className="m-auto w-[66.5%] h-36 mb-1 ">
                     <h2 className="text-2xl text-[#14113E] font-bold mb-4 "> {current.title} </h2>
                     <p className="text-sm text-[#14113E] "> {current.descriptio} </p>
                 </div>
