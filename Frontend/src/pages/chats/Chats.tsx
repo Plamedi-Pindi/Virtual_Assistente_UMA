@@ -17,7 +17,7 @@ import { useState } from "react";
 type MessageType = {
     from: string,
     message: string
-} 
+}
 
 // Main Component
 const Chatpage = () => {
@@ -66,46 +66,57 @@ const Chatpage = () => {
             {/* Header */}
             <HeaderSection />
 
-            <section className=" w-full grow pl-6 pr-6 flex flex-col-reverse items-end pb-[8rem] gap-6 relative overflow-auto scroll-smooth">
-                {msgReversed.map((msg, idx) => msg.from === "user" ? (
-                    <ChatBox1
-                        key={idx}
-                        position="absolute right-0"
-                        dimension="max-w-56 "
-                    >
-                        {msg.message}
-                    </ChatBox1>
-                ) : (
+            {messages.length === 0
+                ? (
+                    <div className="absolute w-full flex flex-col items-center justify-center top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-gray-950 ">
+                        <p className="font-bold text-xl">Ola! 😃</p>
+                        <h2 className="text-lg">Em que posso ajudar?</h2>
 
-                    <ChatBox2
-                        key={idx}
-                        position=""
-                        dimension="mr-auto max-w-72"
-                    >
-                        <ReactMarkdown
-                            components={{
-                                strong: ({ children }) => <strong className="font-bold">{children}</strong>,
-                                ul: ({ children }) => <ul className="list-disc pl-5 text-sm">{children}</ul>,
-                                p: ({ children }) => <p className="mb-2 mt-2">{children}</p>,
-                                a: ({ children, href }) => (
-                                    <a
-                                        href={href}
-                                        className="text-blue-700"
-                                    >
-                                        {children}
-                                    </a>
-                                ),
-                                h1: ({ children }) => <h1 className="font-bold mb-2">{children}</h1>,
-                                h2: ({ children }) => <h1 className="font-semibold mb-1 mt-2">{children}</h1>,
-                            }}
-                        >
-                            {msg.message}
-                        </ReactMarkdown>
-                    </ChatBox2>
+                    </div>
                 )
-                )}
+                : (
+                    <section className=" w-full grow pl-6 pr-6 flex flex-col-reverse items-end pb-[8rem] gap-6 relative overflow-auto scroll-smooth relative">
+                        {msgReversed.map((msg, idx) => msg.from === "user" ? (
+                            <ChatBox1
+                                key={idx}
+                                position="absolute right-0"
+                                dimension="max-w-56 "
+                            >
+                                {msg.message}
+                            </ChatBox1>
+                        ) : (
 
-            </section>
+                            <ChatBox2
+                                key={idx}
+                                position=""
+                                dimension="mr-auto max-w-72"
+                            >
+                                <ReactMarkdown
+                                    components={{
+                                        strong: ({ children }) => <strong className="font-bold">{children}</strong>,
+                                        ul: ({ children }) => <ul className="list-disc pl-5 text-sm">{children}</ul>,
+                                        p: ({ children }) => <p className="mb-2 mt-2">{children}</p>,
+                                        a: ({ children, href }) => (
+                                            <a
+                                                href={href}
+                                                className="text-blue-700"
+                                            >
+                                                {children}
+                                            </a>
+                                        ),
+                                        h1: ({ children }) => <h1 className="font-bold mb-2">{children}</h1>,
+                                        h2: ({ children }) => <h1 className="font-semibold mb-1 mt-2">{children}</h1>,
+                                    }}
+                                >
+                                    {msg.message}
+                                </ReactMarkdown>
+                            </ChatBox2>
+                        )
+                        )}
+                    </section>
+                )
+            }
+
 
             {/* Input */}
             <ChatInputs onSend={handleSendMessage} />
