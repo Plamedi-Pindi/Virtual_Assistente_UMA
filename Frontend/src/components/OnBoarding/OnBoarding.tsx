@@ -49,14 +49,14 @@ const OnBoarding = () => {
 
             {step === 0
                 ? (
-                    <img src={img_boarding1} alt="" className="absolute -top-[11rem] " />
+                    <img src={img_boarding1} alt="" className="absolute -top-[11rem]  " />
                 )
                 : step === 1
                     ? (<img src={img_boarding2} alt="" className="absolute -top-[rem]" />)
                     : (<img src={img_boarding3} alt="" className="absolute -top-[1rem]" />)
             }
 
-            <div className="bg-[#e8e7e7] h-[18rem] w-full absolute bottom-0 rounded-t-[2rem] p-2 mb-3 text-center">
+            <div className="bg-[#e8e7e7] h-[18rem] w-full absolute -bottom-3 rounded-t-[2rem] p-2 mb-3 text-center">
                 <div className="flex justify-center items-center mt-4 mb-5 gap-1 ">
                     <button className={` ${step === 0 ? 'w-7 bg-[#D72229]' : 'w-2 bg-[#D9D9D9]'}  h-2 rounded-full bloch`}></button>
                     <button className={`${step === 1 ? 'w-7 bg-[#D72229]' : 'w-2 bg-[#D9D9D9]'}  h-2 rounded-full  bloch`}></button>
