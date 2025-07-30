@@ -62,7 +62,7 @@ const Chatpage = () => {
     }
 
     return (
-        <div className="h-screen w-full overflow-y-hidden bg-gradient-to-t from-[#999999] to-[#FFFFFF] flex flex-col  ">
+        <div className="h-dvh w-full overflow-y-hidden bg-gradient-to-t from-[#999999] to-[#FFFFFF] flex flex-col  ">
             {/* Header */}
             <HeaderSection />
 

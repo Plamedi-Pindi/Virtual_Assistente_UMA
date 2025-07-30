@@ -14,7 +14,7 @@ const LoginPage = () => {
 
 
     return (
-        <div className="h-screen bg-[#E8E7E7] flex flex-col items-center ">
+        <div className="h-dvh bg-[#E8E7E7] flex flex-col items-center ">
             <img src={shape1} className="w-full " />
             <img src="./Logo.png" alt="Logo" className="w-32" />
 

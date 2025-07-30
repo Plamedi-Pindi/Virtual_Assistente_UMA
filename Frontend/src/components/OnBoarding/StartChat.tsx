@@ -19,7 +19,7 @@ const StartChat = ({isDisplayed, onClick}:StartChatType) => {
     const navigate = useNavigate();
 
     return (
-        <div className={`w-full h-screen bg-third absolute z-[11] top-0 left-0 flex flex-col justify-end pb-5 ${isDisplayed ? "block" : "hidden"} duration-700`}>
+        <div className={`w-full h-dvh bg-third absolute z-[11] top-0 left-0 flex flex-col justify-end pb-5 ${isDisplayed ? "block" : "hidden"} duration-700`}>
             <div className=" grow relative">
                 {/* Close Button */}
                 <button

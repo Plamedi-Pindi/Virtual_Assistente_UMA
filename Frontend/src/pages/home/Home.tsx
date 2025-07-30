@@ -105,7 +105,7 @@ const HomePage = () => {
 
 
     return (
-        <div className="bg-third h-screen relative flex flex-col items-center overflow-hidden">
+        <div className="bg-third h-dvh relative flex flex-col items-center overflow-hidden">
             {/*  */}
             <header className="bg-gradient-to-t from-[#E41B23]  to-[#C1171D] w-full h-40 rounded-b-[2rem] pt-6 pl-4 pr-4 p-2 shadow-[0_35px_60px_-10px_rgba(0,0,0,0.3)] ">
 
