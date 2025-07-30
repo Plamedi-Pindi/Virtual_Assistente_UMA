@@ -9,14 +9,40 @@ import * as motion from "motion/react-client";
 
 // Import Navigate 
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 type StartChatType = {
     isDisplayed: boolean,
-    onClick: ()=> void
+    onClick: () => void
 }
 
-const StartChat = ({isDisplayed, onClick}:StartChatType) => {
+const StartChat = ({ isDisplayed, onClick }: StartChatType) => {
+    const [isAnimated, setIsAnimated] = useState(false);
     const navigate = useNavigate();
+
+    const handleClick = () => {
+        setIsAnimated(true);
+
+        setTimeout(() => {
+            navigate("/virtualassistent")
+        }, 3000);
+    }
+
+    const robotAnimate = isAnimated
+        ? {
+            scale: [1, 1.2, 1.2, 1, 1],
+            rotate: [0, 0, 30, -30, 0],
+            y: [1, 1, -30, -30, 1]
+        }
+        : {}
+
+    const ellipseAnimation = isAnimated
+        ? {
+            scale: [1, 1.1, 1.2, 1, 1],
+            rotate: [0, 0, 20, -20, 0],
+            y: [1, 1, -20, -20, 1]
+        }
+        : {}
 
     return (
         <div className={`w-full h-dvh bg-third absolute z-[11] top-0 left-0 flex flex-col justify-end pb-5 ${isDisplayed ? "block" : "hidden"} duration-700`}>
@@ -33,11 +59,7 @@ const StartChat = ({isDisplayed, onClick}:StartChatType) => {
                 <img src="/svg/Ellipse3.svg" className="w-24 absolute top-32 right-0 z-[10] " />
                 <div className="w-full h-full z-[12] pt-[5rem] relative">
                     <motion.img
-                        animate={{
-                            scale: [1, 1.2, 1.2, 1, 1],
-                            rotate: [0, 0, 30, -30, 0],
-                            y: [1, 1, -30, -30, 1]
-                        }}
+                        animate={robotAnimate}
                         transition={{
                             duration: 3,
                             ease: "easeInOut",
@@ -50,11 +72,7 @@ const StartChat = ({isDisplayed, onClick}:StartChatType) => {
                     />
 
                     <motion.img
-                        animate={{
-                            scale: [1, 1.1, 1.2, 1, 1],
-                            rotate: [0, 0, 20, -20, 0],
-                            y: [1, 1, -20, -20, 1]
-                        }}
+                        animate={ellipseAnimation}
                         transition={{
                             duration: 3,
                             ease: "easeInOut",
@@ -74,7 +92,7 @@ const StartChat = ({isDisplayed, onClick}:StartChatType) => {
                     <p className="text-sm">Vamos conversar e resolver os teus problemas juntos?</p>
                 </div>
 
-                <Button onClick={() => navigate("/virtualassistent")}>Começar agora</Button>
+                <Button onClick={handleClick}>Começar agora</Button>
             </div>
         </div>
     )

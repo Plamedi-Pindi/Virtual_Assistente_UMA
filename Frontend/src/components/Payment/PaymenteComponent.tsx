@@ -24,7 +24,7 @@ const PayInfoItems = ({ imgUrl, title, alt, imgDimassion }: PayInfoItemsType) =>
                 <p className="text-sm w-44" >{title}</p>
             </div>
 
-            <img src="/right.png" alt="icon para acessa este item" className="w-7" />
+            <img src="/right.png" alt="icon para acessar este item" className="w-7" />
         </motion.div>
     )
 }
