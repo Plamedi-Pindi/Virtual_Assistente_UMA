@@ -12,6 +12,9 @@ export default {
         "primary": '#14113E',
         "secundary": "#D72229",
         "third": "#E8E7E7"
+      },
+      screens:{
+        'lay_520': '32.5rem'
       }
     },
   },

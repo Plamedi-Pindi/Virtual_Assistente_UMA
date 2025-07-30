@@ -6,6 +6,7 @@ import Button from "../Button/Button"
 // Import Hooks
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { useBreakpoint } from "../../hooks/useBreackpoit"
 
 // Import Images
 import img_boarding1 from "../../assets/img/onBoarding/1.png";
@@ -53,6 +54,8 @@ const OnBoarding = () => {
 
     const currentImg = imageData[step] || imageData[0];
 
+    const isMediaQuery_520 = useBreakpoint('(min-width:520px)')
+
     return (
         <div className={`h-dvh 
             onBoard-stl object-contain  relative overflow-hidden  `}>
@@ -66,12 +69,12 @@ const OnBoarding = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -30 }}
                     transition={{ duration: 0.5, ease: 'easeInOut' }}
-                    className="absolute w-full"
-                    style={{ top: currentImg.top }}
+                    className="absolute w-full "
+                    style={{ top: isMediaQuery_520 ? '-21rem' : currentImg.top }}
                 />
             </AnimatePresence>
 
-            <div className="bg-[#e8e7e7] h-[18rem] w-full absolute -bottom-3 rounded-t-[2rem] p-2 mb-4 text-center">
+            <div className="bg-[#e8e7e7] h-[18rem] w-full absolute bottom-[-1rem] rounded-t-[2rem] p-2 mb-4 text-center">
                 <div className="flex justify-center items-center mt-4 mb-5 gap-1 ">
                     <button className={` ${step === 0 ? 'w-7 bg-[#D72229]' : 'w-2 bg-[#D9D9D9]'}  h-2 rounded-full bloch`}></button>
                     <button className={`${step === 1 ? 'w-7 bg-[#D72229]' : 'w-2 bg-[#D9D9D9]'}  h-2 rounded-full  bloch`}></button>
