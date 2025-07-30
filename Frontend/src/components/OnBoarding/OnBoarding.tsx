@@ -63,7 +63,7 @@ const OnBoarding = () => {
                     <button className={`${step === 2 ? 'w-7 bg-[#D72229]' : 'w-2 bg-[#D9D9D9]'}  h-2 rounded-full bloch`}></button>
                 </div>
 
-                <div className="m-auto w-[66.5%] h-36 mb-1 ">
+                <div className="m-auto w-[66.5%] h-36 mb-2 ">
                     <h2 className="text-2xl text-[#14113E] font-bold mb-4 "> {current.title} </h2>
                     <p className="text-sm text-[#14113E] "> {current.descriptio} </p>
                 </div>
