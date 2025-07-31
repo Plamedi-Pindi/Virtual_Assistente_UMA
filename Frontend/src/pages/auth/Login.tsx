@@ -30,7 +30,7 @@ const LoginPage = () => {
         </div>
     )
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
