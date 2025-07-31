@@ -1,5 +1,5 @@
 .animate-load {
-    animation: animateLoadIcon 2s infinite ;
+    animation: animateLoadIcon 2s infinite;
 }
 
 @keyframes animateLoadIcon {
@@ -10,4 +10,11 @@
     100% {
         transform: rotate(720deg);
     }
+}
+
+input:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px #14113E inset !important;
+    -webkit-box-shadow: 0 0 0px 1000px #14113E inset !important;
+    -webkit-text-fill-color: #fff !important;
+    -webkit-background-fill-color: #14113E !important;
 }
