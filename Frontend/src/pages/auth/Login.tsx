@@ -1,22 +1,33 @@
+// Import hooks
 import { useState } from "react";
+
+// Import Img, gif, svg
 import shape1 from "../../assets/Group 58.svg";
 // import { useNavigate } from "react-router-dom";
-import { Loader } from "lucide-react";
+
+// Import Icons
+import { Loader, Eye, EyeOff } from "lucide-react";
+
+// Import CSS
 import "./Login.css";
 
-
+// Interface for login form data
 interface FormType {
     email: string,
     password: string
 }
+
+// Interfate for error data
 interface ErrorType {
     emailError: string,
     passeError: string
 }
 
+// Main Components
 const LoginPage = () => {
     const [form, setForm] = useState<FormType>({ email: '', password: '' });
     const [error, setError] = useState<ErrorType>({ emailError: '', passeError: '' });
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false)
     const [isLoading, setIsLoading] = useState(false);
 
     const isEmailError = error.emailError.length !== 0;
@@ -29,6 +40,14 @@ const LoginPage = () => {
             <p>Loading...</p>
         </div>
     )
+
+    // controls the visibility of the password
+    const pw_visibility = isPasswordVisible
+        ? (<Eye className="w-5" />)
+        : (<EyeOff className="w-5" />)
+    
+    const pw_input_type = isPasswordVisible ? 'text' : 'password'
+
 
     // const navigate = useNavigate();
 
@@ -80,12 +99,18 @@ const LoginPage = () => {
                         <input
                             onChange={(e) => setForm({ ...form, password: e.target.value })}
                             value={form.password}
-                            type="password"
+                            type={pw_input_type}
                             placeholder="Senha"
                             className="w-full h-12 outline-none p-2 pl-4 bg-transparent"
                         />
 
-                        <button className="uppercase text-[#dddd] text-xs block">Mostrar</button>
+                        <button
+                            onClick={() => setIsPasswordVisible(!isPasswordVisible)}
+                            type="button"
+                            className="uppercase text-[#dddd] text-xs block outline-none"
+                        >
+                            {pw_visibility}
+                        </button>
                     </div>
                     {/* Handle Error message */}
                     <div className={`bg-red-200 p-1 text-sm rounded text-red-900 pl-4 ${isPasswordError ? 'block' : 'hidden'}`}>{error.passeError}</div>
