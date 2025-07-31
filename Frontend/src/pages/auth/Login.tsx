@@ -3,7 +3,9 @@ import { useState } from "react";
 
 // Import Img, gif, svg
 import shape1 from "../../assets/Group 58.svg";
-// import { useNavigate } from "react-router-dom";
+
+// Import navigate 
+import { useNavigate } from "react-router-dom";
 
 // Import Icons
 import { Loader, Eye, EyeOff } from "lucide-react";
@@ -23,12 +25,19 @@ interface ErrorType {
     passeError: string
 }
 
+const fakeProfiles = {
+    email: "assistente@uma.com",
+    password: "12345678"
+}
+
 // Main Components
 const LoginPage = () => {
     const [form, setForm] = useState<FormType>({ email: '', password: '' });
     const [error, setError] = useState<ErrorType>({ emailError: '', passeError: '' });
     const [isPasswordVisible, setIsPasswordVisible] = useState(false)
     const [isLoading, setIsLoading] = useState(false);
+
+    const navigate = useNavigate();
 
     const isEmailError = error.emailError.length !== 0;
     const isPasswordError = error.passeError.length !== 0;
@@ -45,11 +54,10 @@ const LoginPage = () => {
     const pw_visibility = isPasswordVisible
         ? (<Eye className="w-5" />)
         : (<EyeOff className="w-5" />)
-    
+
     const pw_input_type = isPasswordVisible ? 'text' : 'password'
 
 
-    // const navigate = useNavigate();
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -63,16 +71,15 @@ const LoginPage = () => {
                 setError({ passeError: "Introduza uma senha válido!", emailError: "" })
             } else if (form.password.trim().length < 8) {
                 setError({ passeError: "A senha não pode conter menos 8 catacteres!", emailError: "" })
+            } else if (form.email !== fakeProfiles.email) {
+                setError({ passeError: "", emailError: "E-mail não encontrado. Verifique se digitou corretamente!" })
+            } else if (form.password !== fakeProfiles.password) {
+                setError({ passeError: "Senha incorreta. Tente novamente.", emailError: "" })
             } else {
-                setError({ passeError: "", emailError: "" })
-                setForm({ email: '', password: '' })
+                navigate("/home");
             }
         }, 1500);
-
-
-        // navigate("/home");
     }
-
 
     return (
         <div className="min-h-dvh bg-[#E8E7E7] flex flex-col items-center  ">
@@ -115,7 +122,6 @@ const LoginPage = () => {
                     {/* Handle Error message */}
                     <div className={`bg-red-200 p-1 text-sm rounded text-red-900 pl-4 ${isPasswordError ? 'block' : 'hidden'}`}>{error.passeError}</div>
 
-
                     <div className="flex justify-between  mt-4 mb-4">
                         <div className="flex items-center text-sm gap-3">
                             <input type="checkbox" className="" />
@@ -133,8 +139,6 @@ const LoginPage = () => {
                 <p className="text-primary font-medium">Ainda não possui conta?</p>
                 <p className="text-secundary underline">Criar conta</p>
             </div>
-
-
         </div>
     )
 }
