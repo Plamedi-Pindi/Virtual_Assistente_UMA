@@ -1,6 +1,6 @@
 import { useState } from "react";
 import shape1 from "../../assets/Group 58.svg";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { Loader } from "lucide-react";
 import "./Login.css";
 
