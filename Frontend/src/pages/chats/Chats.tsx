@@ -68,7 +68,7 @@ const Chatpage = () => {
 
             {messages.length === 0
                 ? (
-                    <div className="absolute w-full flex flex-col items-center justify-center top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-gray-950 ">
+                    <div className="absolute w-full flex flex-col items-center justify-center top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-gray-95 0 ">
                         <p className="font-bold text-xl">Ola! 😃</p>
                         <h2 className="text-lg">Em que posso ajudar?</h2>
 

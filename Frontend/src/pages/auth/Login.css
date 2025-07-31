@@ -1,0 +1,13 @@
+.animate-load {
+    animation: animateLoadIcon 2s infinite ;
+}
+
+@keyframes animateLoadIcon {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(720deg);
+    }
+}
