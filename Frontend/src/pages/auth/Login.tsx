@@ -137,6 +137,7 @@ const LoginPage = () => {
 
             <div className="text-sm mt-6 mb-6  text-center">
                 <p className="text-primary font-medium">Ainda não possui conta?</p>
+                <p onClick={()=> navigate('/virtualassistent')} className="text-primary underline">Iniciar sem uma conta</p>
                 <p className="text-secundary underline">Criar conta</p>
             </div>
         </div>
